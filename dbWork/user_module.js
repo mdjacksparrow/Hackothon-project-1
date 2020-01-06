@@ -2,10 +2,8 @@ var mongoose = require("mongoose");
 var Schema = mongoose.Schema;
 
 var directorateSchema = new Schema({
-  collegeList: {
-    type: String,
-    required: [true]
-  }
+  collegeList: String,
+  email : String
 });
 
 var collegeSchema = new Schema({
@@ -32,8 +30,8 @@ var userSchema = new Schema({
     type: String,
     required: [true]
   },
-  yearOfPassing: {
-    type: Date,
+  ugYearOfPassing: {
+    type: Number,
     required: [true]
   },
   college: {
@@ -52,22 +50,15 @@ var userSchema = new Schema({
   firstName: String,
   secondName: String,
   phone: Number,
-  ugYearOfPassing: Date,
   pgCourse: String,
-  pgYearOfPassing: Date,
+  pgYearOfPassing: Number,
   research: String,
-  researchYearOfPassing: Date,
+  researchYearOfPassing: Number,
   designation: String,
   companyName: String,
   residence: String,
   hometown: String,
-  skills: {
-    football: Boolean,
-    volleyball: Boolean,
-    cricket: Boolean,
-    hockey: Boolean,
-    others: Boolean
-  }
+  skills: []
 });
 
 exports.Alumni = mongoose.model("alumniDB", userSchema);

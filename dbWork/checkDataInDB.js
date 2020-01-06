@@ -2,8 +2,8 @@ const mongoose = require('mongoose');
 const DB = require('./user_module');
 const dbConnection = require('../dbWork/dbConnection');
 
-
-exports.checkData = function(renderingName,res) {
+// FROM Directorate 
+exports.checkDataFromDirectorate = function(res) {
 
 //create connection 
 dbConnection.connect();
@@ -16,7 +16,7 @@ db.once("open", function() {
   // we're connected!
   console.log("Connection Established !");
 
-  DB.College.find({}, {}, (err, docs) => {
+  DB.Directorate.find({}, {}, (err, docs) => {
     if (err) console.log(err);
     else {
       console.log(docs);
@@ -27,7 +27,46 @@ db.once("open", function() {
 
       var numberOfMembers = arrOfUser.length;
 
-      res.render(`${renderingName}`, {
+      res.render("directoratecontrolPanel", {
+        ArrOfUser: arrOfUser,
+        NumberOfMembers: numberOfMembers
+      });
+
+      console.log("DB connection lost!");
+    }
+  });
+});
+}
+
+
+
+
+// FROM College DB
+exports.checkDataFromCollege = function(res) {
+
+//create connection 
+dbConnection.connect();
+
+var arrOfUser = [];
+var db = mongoose.connection;
+
+db.on("error", console.error.bind(console, "connection error:"));
+db.once("open", function() {
+  // we're connected!
+  console.log("Connection Established !");
+
+  DB.Alumni.find({}, {}, (err, docs) => {
+    if (err) console.log(err);
+    else {
+      console.log(docs);
+      docs.forEach(user => {
+        arrOfUser.push(user);
+      });
+      mongoose.connection.close();
+
+      var numberOfMembers = arrOfUser.length;
+
+      res.render('collegecontrolPanel' , {
         ArrOfUser: arrOfUser,
         NumberOfMembers: numberOfMembers
       });

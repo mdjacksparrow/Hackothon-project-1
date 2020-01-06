@@ -29,12 +29,12 @@ app.get("/college_sign_up", (req, res) => {
 
 // Route for college sign_up POST 
 app.post('/college_sign_up' , (req, res) => {
-  createOneDataInDb.createOne(req,res);
+  createOneDataInDb.createNewCollege(req,res);
 });
 
 // Route for College_control_panel GET
 app.get('/college_controlPanel', (req,res) => {
-  checkDataInDB.checkData("collegecontrolPanel",res);
+  checkDataInDB.checkDataFromCollege(res);
 });
 
 // Route for Directorate sing in GET
@@ -42,10 +42,9 @@ app.get('/college_controlPanel', (req,res) => {
 //   res.redirect("/directorate_control_panel");
 // });
 
-
 // Redirect for College_control_panel GET
 app.get('/directorate_control_panel', (req,res) => {
-  checkDataInDB.checkData("directoratecontrolPanel",res);
+  checkDataInDB.checkDataFromDirectorate(res);
 });
 
 
@@ -55,7 +54,25 @@ app.get('/directorate_control_panel', (req,res) => {
 //     text : "lorem ipsumlsajflsjf slfdkjas fla lj sa sjf lskjaf ls fajf !"
 //   });
 // }); 
- 
+
+
+// Route for Alumni Sign In GET 
+app.get('/alumni_sign_in', (req, res) => {
+  res.render('alumniSignIn');
+});
+
+
+// Route for Alumni Sign Up GET 
+app.get("/alumni_sign_up", (req, res) => {
+
+  res.render('alumniSignUp');
+});
+
+// Route for Alumni Sign Up POST 
+app.post("/alumni_sign_up", (req, res) => {
+  createOneDataInDb.createNewAlumni(req, res);
+});
+
 
 // Create server listen port: 4000
 app.listen(process.env.PORT || 4000, () => {
