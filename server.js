@@ -1,12 +1,13 @@
 // Requirement modules
 const express = require('express');
 const bodyParser = require('body-parser');
-const mongoose = require('mongoose');
-const User = require("./dbWork/user_module");
-const dbConnection = require('./dbWork/dbConnection');
+// const mongoose = require('mongoose');
+const DB = require("./dbWork/user_module");
+// const dbConnection = require('./dbWork/dbConnection');
 const createOneDataInDb = require('./dbWork/createOneDataInDb');
 const checkDataInDB = require('./dbWork/checkDataInDB');
 
+console.log(DB);
 
 // import express function 
 var app = express();
@@ -34,7 +35,7 @@ app.get("/college_sign_up", (req, res) => {
 
 // Route for college sign_up POST 
 app.post('/college_sign_up' , (req, res) => {
-  createOneDataInDb.createOne(data,req,res);
+  createOneDataInDb.createOne(req,res);
 });
 
 // Route for College_control_panel GET

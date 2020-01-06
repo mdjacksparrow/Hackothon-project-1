@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 const User = require('./user_module');
-const dbConnection = require('./dbConnection');
+const dbConnection = require('./dbConnectionOfCollegeDB');
 
 
 exports.checkData = function(res) {

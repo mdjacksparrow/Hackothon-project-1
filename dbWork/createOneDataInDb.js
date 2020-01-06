@@ -1,27 +1,31 @@
 var mongoose = require('mongoose');
-var dbConnection = require('./dbConnection');
-var User = require('./user_module');
+var dbConnectionOfCollegeDB = require('./dbConnectionOfCollegeDB');
+var DB = require('./user_module');
+var path = require("path");
 
-exports.createOne = function(dataSet,req,res){
+var appDir = path.dirname(require.main.filename);
+
+
+exports.createOne = function(req,res){
  
   var data = req.body;
   console.log(data);
 
 // Create connection between server and DB 
-dbConnection.connect();
+dbConnectionOfCollegeDB.connect();
 
 var db = mongoose.connection;
 
 db.on("error", console.error.bind(console, "connection error:"));
 db.once("open", function() {
   // we're connected!
-  console.log("Connection Established !");
+  console.log(`Connection Established Between College ${dbConnection}`);
 
-  User.create(
+  DB.College.create(
     {
-      _username: dataSet.Username,
-      _email: dataSet.Email,
-      _password: dataSet.Password
+      username: data.Username,
+      email: data.Email,
+      password: data.Password
     },
     (err, docs) => {
       if (err) console.log(err);
@@ -29,7 +33,7 @@ db.once("open", function() {
         console.log(docs);
         mongoose.connection.close();
         console.log("DB connection lost!");
-        res.sendFile(__dirname + "/Success.html");
+        res.sendFile(appDir + "/Success.html");
       }
     }
   );
