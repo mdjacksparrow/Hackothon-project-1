@@ -2,10 +2,10 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
-const User = require("./user_module");
-const dbConnection = require('./dbConnection');
-const createOneDataInDb = require('./createOneDataInDb');
-const checkDataInDB = require('./checkDataInDB');
+const User = require("./dbWork/user_module");
+const dbConnection = require('./dbWork/dbConnection');
+const createOneDataInDb = require('./dbWork/createOneDataInDb');
+const checkDataInDB = require('./dbWork/checkDataInDB');
 
 
 // import express function 
