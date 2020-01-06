@@ -1,13 +1,8 @@
 // Requirement modules
 const express = require('express');
 const bodyParser = require('body-parser');
-// const mongoose = require('mongoose');
-const DB = require("./dbWork/user_module");
-// const dbConnection = require('./dbWork/dbConnection');
 const createOneDataInDb = require('./dbWork/createOneDataInDb');
 const checkDataInDB = require('./dbWork/checkDataInDB');
-
-console.log(DB);
 
 // import express function 
 var app = express();
@@ -21,7 +16,6 @@ app.set("view engine", "ejs");
 app.get('/', (req,res) => {
  res.render('index');
 });
-
 
 // Route for college sign_in GET
 app.get('/college_sign_in', (req,res) => {
@@ -40,8 +34,27 @@ app.post('/college_sign_up' , (req, res) => {
 
 // Route for College_control_panel GET
 app.get('/college_controlPanel', (req,res) => {
-  checkDataInDB.checkData(res);
+  checkDataInDB.checkData("collegecontrolPanel",res);
 });
+
+// Route for Directorate sing in GET
+// app.get("/directorate_login", (req, res) => {
+//   res.redirect("/directorate_control_panel");
+// });
+
+
+// Redirect for College_control_panel GET
+app.get('/directorate_control_panel', (req,res) => {
+  checkDataInDB.checkData("directoratecontrolPanel",res);
+});
+
+
+// Sample api calling request
+// app.get('/sample-api', (req,res) => {
+//   res.json({
+//     text : "lorem ipsumlsajflsjf slfdkjas fla lj sa sjf lskjaf ls fajf !"
+//   });
+// }); 
  
 
 // Create server listen port: 4000

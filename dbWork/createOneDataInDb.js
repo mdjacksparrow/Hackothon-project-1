@@ -1,5 +1,5 @@
 var mongoose = require('mongoose');
-var dbConnectionOfCollegeDB = require('./dbConnectionOfCollegeDB');
+var dbConnection = require('../dbWork/dbConnection.js');
 var DB = require('./user_module');
 var path = require("path");
 
@@ -12,7 +12,7 @@ exports.createOne = function(req,res){
   console.log(data);
 
 // Create connection between server and DB 
-dbConnectionOfCollegeDB.connect();
+dbConnection.connect();
 
 var db = mongoose.connection;
 

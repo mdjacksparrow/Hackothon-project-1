@@ -1,13 +1,12 @@
 const mongoose = require('mongoose');
-const User = require('./user_module');
-const dbConnection = require('./dbConnectionOfCollegeDB');
+const DB = require('./user_module');
+const dbConnection = require('../dbWork/dbConnection');
 
 
-exports.checkData = function(res) {
+exports.checkData = function(renderingName,res) {
 
 //create connection 
 dbConnection.connect();
-
 
 var arrOfUser = [];
 var db = mongoose.connection;
@@ -17,7 +16,7 @@ db.once("open", function() {
   // we're connected!
   console.log("Connection Established !");
 
-  User.find({}, {}, (err, docs) => {
+  DB.College.find({}, {}, (err, docs) => {
     if (err) console.log(err);
     else {
       console.log(docs);
@@ -28,7 +27,7 @@ db.once("open", function() {
 
       var numberOfMembers = arrOfUser.length;
 
-      res.render("controlPanel", {
+      res.render(`${renderingName}`, {
         ArrOfUser: arrOfUser,
         NumberOfMembers: numberOfMembers
       });
