@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ <meta charset="UTF-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+ <!-- Link for Bootstrap -->
+ <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+ 
+ <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+ 
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+ 
+ <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+
+  <!-- Fotorama -->
+  <link href="/Assets/plugin/fotorama-4.6.2/fotorama.css" rel="stylesheet">
+  <script src="/Assets/plugin/fotorama-4.6.2/fotorama.js"></script>
+
+ <!-- Link for stylesheet -->
+ <link rel="stylesheet" href="/index.css">
+ <script src="https://kit.fontawesome.com/e2169f0192.js"></script>
+ <title>Home</title>
+</head>
+<body>
+
+ <nav class="navbar navbar-inverse navbar-expand-lg">
+  <div class = "container-fluid">
+  <!-- Toggle button  -->
+  <button class="navbar-toggler" type="button" data-toggle = "collapse" data-target="#links">
+    <i class="fa fa-bars" aria-hidden="true"></i>
+  </button>
+
+  <!-- Brand  -->
+  <div class="navbar-header">
+   <a href="/index.html">
+    <img src="./Assets/img/logo_of_goa.png" alt="Goa logo" class="navbar-brand">
+    <h2 class="text-dark navbar-brand pt-3">University college of GOA</h2>
+   </a>
+  </div>
+
+ <!-- Links -->
+ <div class="navbar-collapse collapse" id="links">
+  <ul class="nav navbar-nav pl-5">
+   <li class=" nav-item">
+    <a href="/index.html" class="nav-link active">Home</a>
+   </li>
+
+   <li class=" nav-item">
+    <a href="/Directorate Login/Sign in/sign_in.html" class="nav-link">
+      <span class = "fa fa-sign-in"></span>
+      Directorate Login
+    </a>
+   </li>
+
+  <li class="nav-item" id="drop">
+    <div class="dropdown">
+      <a href="#" class="nav-link" data-toggle="dropdown">
+        <span class="fa fa-caret-down"></span>
+        College
+      </a>
+  
+      <div class="dropdown-menu">
+        <a href="/College Login/Sign in/sign_in.html" class="dropdown-item">Sign_in</a>
+        <a href="/College Login/Sing up/Sign_ups.html" class = "dropdown-item">Sign_up</a>
+      </div>
+    </div>
+  </li>
+
+   <li class="nav-item" id="drop">
+     <div class="dropdown">
+      <a href="#" class="nav-link" data-toggle="dropdown">
+        <span class="fa fa-caret-down"></span>
+        Alumni
+      </a>
+
+      <div class="dropdown-menu">
+        <a href="/Sign in/sign_in.html" class="dropdown-item">Sign_in</a>
+        <a href="/Sing up/Sign_ups.html" class="dropdown-item">Sign_up</a>
+      </div>
+     </div>
+   </li>
+
+   <li class=" nav-item">
+    <a href="/TheEventBootstrapTemplate/index.html" class="nav-link nav-button text-white " type="button">Events</a>
+   </li>
+  </ul>
+ </div>
+ </div>
+ </nav>
+
+<!-- Fotorama -->
+<div class="fotorama" 
+    data-width="100%"
+    data-height = "70%"
+    data-ratio="800/600"
+    data-fit = "scaledown"
+    data-loop = "true"
+    data-autoplay = "3000"
+    data-transition = "crossfade"
+    data-clicktransition="crossfade"
+    >
+  <img src="./Assets/img/Alumni/logo.jpg">
+  <img src="./Assets/img/Alumni/logo-1.jpg">
+  <img src="/Assets/img/Alumni/photo-7.jpeg">
+  <img src="./Assets/img/Alumni/photo-1.jpeg">
+  <img src="/Assets/img/Alumni/photo-4.jpeg">
+  <img src="/Assets/img/Alumni/photo-3.jpeg">
+  <img src="/Assets/img/Alumni/photo-2.jpeg">
+  <img src="/Assets/img/Alumni/photo-6.jpg">
+</div>
+
+</body>
+
+<footer class="text-center pt-5 text-secondary">
+  <p>Copy rights reserved &copy; 2019 by Aubitalumni.com</p>
+</footer>
+</html>
+
+ <!-- Link for js -->
+<script src="./sign_in.js"></script>
+</body>
+</html>

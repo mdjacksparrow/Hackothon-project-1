@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+ <meta charset="UTF-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <meta http-equiv="X-UA-Compatible" content="ie=edge">
+ <title>Dash Board</title>
+
+ <!-- Bootstrap CDN  -->
+ <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+
+ <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+
+ <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+
+ <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+ <script src="https://kit.fontawesome.com/e2169f0192.js" crossorigin="anonymous"></script>
+
+ <!-- Local stylesheet link  -->
+ <link rel="stylesheet" href="/css/sign_up.css">
+ <link rel="stylesheet" href="/css/controlPanel.css">
+
+</head>
+
+<body>
+ <!-- Navbar -->
+ <%- include('navbar') -%>
+
+ <!-- Form details -->
+ <form action="#" id="form">
+  <!-- Getting Account information -->
+  <div class="cont" id="account-info">
+   <h1>College Login Info</h1>
+   <div class="input-flex">
+    <i class="fas fa-user-tie" id="u"></i>
+    <input type="text" name="Username" id="username" placeholder="Username" required>
+    <i id="user-check" class="indicator">&#33;</i>
+   </div>
+
+   <div class="input-flex">
+    <i class="fa fa-envelope" aria-hidden="true" id="e"></i>
+    <input type="email" name="Email" id="email" placeholder="Email" required>
+   </div>
+
+   <div class="input-flex">
+    <i class="fas fa-unlock-alt" id="p"></i>
+    <input type="password" name="Password" id="password" placeholder="Password" required>
+    <i id="password-check" class="indicator">&#33;</i>
+   </div>
+
+   <div class="input-flex">
+    <i class="fas fa-unlock-alt" id="rp"></i>
+    <input type="password" name="Re-Password" id="re-password" placeholder="Conform Password" required>
+    <i id="re-password-check" class="indicator">&#33;</i>
+   </div>
+
+   <button type="submit" class="btn btn-danger">Submit</button>
+  </div>
+ </form>
+
+ <script src="/js/sign_up.js"></script>
+</body>
+
+<%- include('footer') -%>
+
+</html>

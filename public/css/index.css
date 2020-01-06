@@ -1,0 +1,101 @@
+@import url('https://fonts.googleapis.com/css?family=Kanit:400,500,600&display=swap');
+
+*{
+ margin: 0;
+ padding: 0;
+}
+
+body{
+ font-family: 'Kanit', sans-serif;
+ font-weight: 400;
+}
+
+nav{
+ background-color: #fffdf9;
+ color: white;
+ margin-bottom: 3rem;
+}
+
+
+.navbar-brand{
+ height: 60px;
+}
+
+.active{
+ border-radius: 3px;
+}
+
+.nav-item{
+ margin: 0 15px;
+}
+
+.fa-sign-in,.fa-caret-down{
+ padding: 0 10px;
+ color: #fb5b5a;
+}
+
+.dropdown-item:hover{
+ background-color: #fb5b5a;
+ color: white;
+}
+
+.nav-link{
+ color: black;
+ display: inline-block;
+}
+
+.active{
+ background-color: #fb5b5a;
+ color: white;
+}
+
+.nav-item:hover,.nav-link:hover,.nav-item:hover{
+ background-color: #fb5b5a;
+ color: white;
+}
+
+.nav-item:hover #drop,.nav-item:hover .fa-caret-down{
+ background-color: none;
+ color: white;
+}
+
+.nav-item:hover .fa-sign-in{
+ color: white;
+}
+
+.nav-button{
+ border-radius: 3px;
+ background-color: #fb5b5a;
+}
+
+img{
+ max-width: 100%;
+}
+
+/* .drop:hover{
+ background-color: white;
+} */
+
+@media (max-width:756px){
+ 
+.nav-item .nav-link{
+ /* margin: 0 15px; */
+ display: block;
+ width: 100%;
+ padding: 1rem 1rem;
+}
+
+.fa-sign-in{
+ padding: 10px;
+}
+
+.navbar-header{
+ margin: 0 0 0 2rem;
+ width: 250px;
+}
+
+.navbar-header h2{
+ margin: 0;
+ font-size: 0.9rem;
+}
+}

@@ -1,0 +1,108 @@
+@import url('https://fonts.googleapis.com/css?family=Gudea:400,700&display=swap&subset=latin-ext');
+
+h1{
+  text-transform: uppercase;
+  color: #34363E;
+  font-size: 1.4rem;
+  letter-spacing: 0.5px;
+  word-spacing: 3px;
+  line-height: 1.4rem;
+  padding: 10px 10px;
+  font-weight: 400;
+}
+
+.indicator{
+  font-size: 1.4rem;
+  font-weight: 900;
+  font-style: normal;
+}
+
+.input-flex{
+  display: flex;
+}
+
+.cont i{
+  color: rgb(146, 145, 145);
+  padding:1rem;
+}
+
+
+span{
+ color: white;
+ padding: .5rem 0.1rem 1rem 0.3rem;
+}
+
+.fa-bars{
+  background:none;
+  border: none;
+}
+
+.cont{
+ width:320px;
+ background: transparent;
+ box-shadow: 2px 2px 5px rgba(0,0,0,0.5);
+ border-radius: 3px;
+ margin: auto;
+}
+
+.cont .inp{
+  display: flex;
+}
+
+#personal-info{
+  margin-top: 1rem;
+}
+
+.cont input{
+ color: #34363E;
+ width: 100%;
+ box-shadow: 1px 1px solid rgba(179, 175, 175, 0.5);
+}
+
+.cont input[type = "text"],input[type = "password"],.cont input[type = "email"],
+.cont input[type = "date"],input[type = "number" ]{
+ border: none;
+ outline: none;
+ border-bottom: 1px solid rgba(248, 231, 231, 0.1);
+}
+
+.cont button{
+ margin: 2rem 1.4rem 1.5rem 5rem;
+ border-radius: 20px;
+ width: 130px;
+}
+
+
+@media (max-width : 600px){
+ .cont{
+  width: 90vw;
+overflow-x: hidden;
+
+  margin: auto;
+  height: auto;
+ }
+
+.nav-item .nav-link{
+ display: block;
+ width: 100%;
+ padding: 1rem 1rem;
+}
+
+.fa-sign-in{
+ padding: 10px;
+}
+
+.fa-bars{
+  background:none;
+  border:none;
+}
+
+.navbar-header{
+ width: 240px;
+}
+
+.navbar-header h2{
+ margin: 0;
+ font-size: 0.9rem;
+}
+}

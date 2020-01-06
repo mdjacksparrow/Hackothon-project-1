@@ -1,0 +1,45 @@
+<%- include('header') -%>
+
+<%- include('navbar') -%>
+
+<div class="container-box container-fluid">
+
+  <!-- Side Section  -->
+  <%- include('sidebar') -%>
+
+  <!-- Main section  -->
+  <div class="main">
+
+   <div class="header">
+    <p class="pl-3"> <span id="value"><%= NumberOfMembers %></span> members in community</p>
+   </div>
+
+
+   <% for(var i = 0; i < ArrOfUser.length; i++){ %>
+    <div class="member">
+     <img src="/img/photo-4.jpeg">
+
+     <div class="member-detail">
+       <a href="#" class="member-name"><%= ArrOfUser[i]._username %></a>
+       <p class="member-year"><%= ArrOfUser[i]._email %></p>
+       <p class="member-degree"><%= ArrOfUser[i]._password %></p>
+       <p class="member-home-town">Tiruchirappalli</p>
+      </div>
+     
+   </div>
+
+   <% } %>
+
+  </div>
+
+ </div>
+
+ <!-- Local js link  -->
+ <script src="/js/controlPanel.js"></script>
+
+ <!-- Hover effect link  -->
+ <%- include('hoverEffect') -%>
+</body>
+
+<%- include('footer') -%>
+</html>

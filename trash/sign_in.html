@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ <meta charset="UTF-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <meta http-equiv="X-UA-Compatible" content="ie=edge">
+ <title>Login</title>
+
+ <!-- Link section  -->
+ <link rel="stylesheet" href="/css/sign_in.css">
+ <script src="https://kit.fontawesome.com/e2169f0192.js" crossorigin="anonymous"></script>
+
+  <!-- Link for Bootstrap -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+  
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+
+</head>
+<body>
+ <!-- Navbar  -->
+ <nav class="navbar navbar-inverse navbar-expand-lg">
+  <div class="container-fluid">
+   <!-- Toggle button  -->
+   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#links">
+    <i class="fa fa-bars" aria-hidden="true"></i>
+   </button>
+ 
+   <!-- Brand  -->
+   <div class="navbar-header">
+    <a href="/index.html">
+     <img src="/Assets/img/logo_of_goa.png" alt="Goa logo" class="navbar-brand">
+     <h2 class="text-dark navbar-brand pt-3">University college of GOA</h2>
+    </a>
+   </div>
+ 
+   <!-- Links -->
+   <div class="navbar-collapse collapse" id="links">
+    <ul class="nav navbar-nav pl-5">
+     <li class=" nav-item">
+      <a href="/index.html" class="nav-link active border-2 pl-2">Home</a>
+     </li>
+ 
+     <li class=" nav-item">
+      <a href="/Directorate Login/Sign in/sign_in.html" class="nav-link"><span class="fa fa-sign-in"></span>Directorate Login</a>
+     </li>
+ 
+      <li class="nav-item" id="drop">
+        <div class="dropdown">
+          <a href="#" class="nav-link" data-toggle="dropdown">
+            <span class="fa fa-caret-down"></span>
+            College Login
+          </a>
+      
+          <div class="dropdown-menu">
+            <a href="#" class="dropdown-item">Sign_in</a>
+            <a href="#" class="dropdown-item">Sign_up</a>
+          </div>
+        </div>
+      </li>
+ 
+      <li class="nav-item" id="drop">
+        <div class="dropdown">
+          <a href="#" class="nav-link" data-toggle="dropdown">
+            <span class="fa fa-caret-down"></span>
+            Alumni Login
+          </a>
+      
+          <div class="dropdown-menu">
+            <a href="/Sign in/sign_in.html" class="dropdown-item">Sign_in</a>
+            <a href="/Sing up/Sign_ups.html" class="dropdown-item">Sign_up</a>
+          </div>
+        </div>
+      </li>
+ 
+     <li class=" nav-item">
+      <a href="/TheEventBootstrapTemplate/index.html" class="nav-link bg-danger text-white pl-2">Events</a>
+     </li>
+    </ul>
+   </div>
+  </div>
+ </nav>
+
+ <!-- Container of Login  -->
+ <div class="cont">
+  <h3>College Login</h3>
+  <div class="username">
+   <i class="fas fa-user-tie" id="user"></i>
+   <input type="text" name="Username" id="username" placeholder="Username" required>
+  </div>
+
+  <div class="password">
+   <i class="fas fa-unlock-alt" id="pass"></i>
+   <input type="password" name="Password" id="password" placeholder="Password" required>
+  </div>
+ 
+  <div class="btn">
+   <button type="button">LOG IN</button>
+   <a href="#" class="forgotten-pass">Forgotten password?</a>
+  </div>
+
+  <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Cupiditate, quidem qui iure aliquam tempora praesentium mollitia possimus.
+   <a href="/Sing up/Sign_ups.html" class="sign-up">Sign up</a>
+  </p>
+ </div>
+
+ <!-- Link for js -->
+<script src="js/sign_in.js"></script>
+</body>
+<footer class="text-center pt-2 text-secondary">
+  <p>Copy rights reserved &copy; 2019 by Aubitalumni.com</p>
+</footer>
+</html>

@@ -1,0 +1,204 @@
+@import url('https://fonts.googleapis.com/css?family=Gudea:400,700&display=swap&subset=latin-ext');
+@import url('https://fonts.googleapis.com/css?family=Kanit:400,500,600&display=swap');
+
+*{
+ padding: 0;
+ margin: 0;
+ box-sizing: border-box;
+}
+
+body{
+ font-family: 'Gudea', sans-serif;
+}
+
+nav{
+ font-family: 'Kanit', sans-serif;
+ font-weight: 400;
+ z-index: 100;
+ background-color: #fffdf9;
+ color: white;
+ box-shadow: 2px 1px 5px rgba(0,0,0,0.5);
+}
+
+.navbar-brand{
+ height: 60px;
+}
+
+.nav-item{
+ margin: 0 15px;
+}
+
+.fa-sign-in,.fa-caret-down{
+ padding: 0 10px;
+ color: #fb5b5a;
+}
+
+.nav-link{
+ color: black;
+ display: inline-block;
+}
+
+.active{
+ background-color: #fb5b5a;
+ color: white;
+}
+
+.nav-item:hover,.nav-link:hover,.nav-item:hover .fa-sign-in{
+ background-color: #fb5b5a;
+ color: white;
+}
+
+.nav-button{
+ border-radius: 3px;
+ background-color: #fb5b5a;
+}
+
+.nav-item:hover #drop,.nav-item:hover .fa-caret-down{
+ background-color: none;
+ color: white;
+}
+
+.active{
+ border-radius: 3px;
+ background:none;
+ outline: 1px solid #fb5b5a;
+ color: #fb5b5a;
+}
+
+
+.cont{
+ width:320px;
+ margin-top: 2rem;
+ /* height: 400px; */
+ background-color: white;
+ color: #34363E;
+ position: absolute;
+ left: 50%;
+ top: 50%;
+ transform: translate(-50%,-50%);
+ box-shadow: 2px 2px 5px rgba(0,0,0,0.5);
+ border-radius: 3px;
+}
+
+.cont h3{
+ margin-top: 1rem;
+ padding: 16px;
+ font-weight: 400;
+}
+
+.cont .username, .cont .password{
+ display: flex;
+ /* border: 2px solid rgba(255, 255, 255, 0.2); */
+ height: 2.5rem;
+ overflow: hidden;
+}
+
+.cont i{
+ padding: 10px 25px ;
+ color: #ada8a8;
+}
+
+.cont input{
+ width: 100%;
+ color: white;
+}
+
+.cont input[type = "text"],input[type = "password"]{
+ padding: 1.2rem 0;
+ color: #34363E;
+ border: none;
+ outline: none;
+}
+
+
+.cont button{
+ width: 100px;
+ text-align: center;
+ height: 30px;
+ width: 120px;
+ font-weight: 700;
+ margin: 2rem 1.4rem 1.5rem 0;
+ font-size: 0.9rem;
+ border-radius: 20px;
+ outline: none;
+ background: none;
+ border: 1px solid #34363E;
+ color: #34363E;
+ text-transform: capitalize;
+}
+
+
+.cont button:hover,.cont button:focus{
+ background-color: #34363E;
+ color: white;
+}
+
+.cont a{
+ color: rgb(114, 114, 116);
+ font-size: 0.9rem;
+}
+
+.cont a:hover, .cont a:focus{
+ color: rgba(255, 255, 255, 0.4);
+}
+
+.cont p{
+ padding: 1rem 2rem 1.7rem 2.2rem;
+ font-size: 0.8rem;
+ color: rgb(126, 126, 133);
+}
+
+.cont .sign-up{
+ color: rgb(126, 126, 133);
+ text-decoration: underline;
+}
+
+.cont .sign-up:hover{
+ color: #34363E;
+}
+
+.dropdown-item:hover{
+ background-color: #fb5b5a;
+ color: white;
+}
+
+footer{
+ position: absolute;
+ bottom: 0;
+ text-align: center;
+ width: 100%;
+ font-size: .8rem;
+}
+
+@media (max-width : 600px){
+ .cont{
+  width: 100%;
+  height: auto;
+  margin-top: 1rem;
+ }
+ 
+ .nav-item .nav-link{
+ /* margin: 0 15px; */
+ display: block;
+ width: 100%;
+ padding: 1rem 1rem;
+}
+
+.fa-sign-in{
+ padding: 10px;
+}
+
+.navbar-header{
+ margin: 0 0 0 2rem;
+ width: 250px;
+}
+
+.navbar-header h2{
+ margin: 0;
+ font-size: 0.9rem;
+}
+
+footer{
+ font-size: 0.8rem;
+}
+}

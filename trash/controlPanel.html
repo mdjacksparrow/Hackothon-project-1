@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ <meta charset="UTF-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <meta http-equiv="X-UA-Compatible" content="ie=edge">
+ <title>Dash Board</title>
+
+ <!-- Bootstrap CDN  -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+
+ <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+ <script src="https://kit.fontawesome.com/e2169f0192.js" crossorigin="anonymous"></script>
+
+  <!-- Local stylesheet link  -->
+  <link rel="stylesheet" href="/css/controlPanel.css">
+</head>
+<body>
+ 
+ <!-- Navbar section  -->
+  <nav class="navbar navbar-inverse navbar-expand-lg">
+   <div class="container-fluid">
+    <!-- Toggle button  -->
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#links">
+     <i class="fa fa-bars"></i>
+    </button>
+  
+    <!-- Brand  -->
+    <div class="navbar-header">
+     <a href="/index.html">
+      <img src="/img/logo_of_goa.png" alt="Goa logo" class="navbar-brand">
+      <h2 class="text-dark navbar-brand pt-3">University college of GOA</h2>
+     </a>
+    </div>
+  
+    <!-- Links -->
+    <div class="navbar-collapse collapse" id="links">
+     <ul class="nav navbar-nav pl-5">
+      <li class=" nav-item">
+       <a href="/index.html" class="nav-link active">Home</a>
+      </li>
+  
+      <li class=" nav-item">
+       <a href="/Directorate Login/Sign in/sign_in.html" class="nav-link"><span class="fa fa-sign-in"></span>Directorate
+        Login</a>
+      </li>
+  
+      <li class="nav-item" id="drop">
+       <div class="dropdown">
+        <a href="#" class="nav-link" data-toggle="dropdown">
+         <span class="fa fa-caret-down"></span>
+         College Login
+        </a>
+  
+        <div class="dropdown-menu">
+         <a href="/College Login/Sign in/sign_in.html" class="dropdown-item">Sign_in</a>
+         <a href="/College Login/Sing up/Sign_ups.html" class="dropdown-item">Sign_up</a>
+        </div>
+       </div>
+      </li>
+  
+      <li class="nav-item" id="drop">
+       <div class="dropdown">
+        <a href="#" class="nav-link" data-toggle="dropdown">
+         <span class="fa fa-caret-down"></span>
+         Alumni Login
+        </a>
+  
+        <div class="dropdown-menu">
+         <a href="/Sign in/sign_in.html" class="dropdown-item">Sign_in</a>
+         <a href="/Sing up/Sign_ups.html" class="dropdown-item">Sign_up</a>
+        </div>
+       </div>
+      </li>
+  
+      <li class=" nav-item">
+       <a href="/TheEventBootstrapTemplate/index.html" class="nav-link pl-2 active">Events</a>
+      </li>
+     </ul>
+    </div>
+   </div>
+  </nav>
+
+
+  <div class="container-box container-fluid">
+   
+   <!-- Side Section  -->
+   <div class="sidebar container p-3">
+
+
+     <h3>Keyword</h3>
+     
+     <div class="first-search-field">
+      <input type="text" placeholder="Enter keyword" id="top-search">
+      <span class="fa fa-search"></span>
+     </div>
+
+     <h3>Filters</h3>
+
+     <div class="search-field">
+      <p class="choose">Search for</p>
+
+      <div class="show">
+      <select name="option">
+       <option value="Search for">Search for</option>
+       <option value="Admin">Admin</option>
+       <option value="Alumni">Alumni</option>
+       <option value="Faculty">Faculty</option>
+       <option value="Student">Student</option>
+      </select>
+      </div>
+     </div>
+
+    <div class="search-field">
+     <p class="choose">Year of Graduation</p>
+    
+    <div class="show">
+
+     <div class="boxes">
+      <input type="checkbox" name="year2017"> <label>2017</label><span class="count">46</span>
+     </div>
+
+     <div class="boxes">
+      <input type="checkbox" name="year2018"><label>2018</label> <span class="count">26</span>
+     </div>
+
+     <div class="boxes">
+      <input type="checkbox" name="year2019"><label>2019</label> <span class="count">134</span>
+     </div>
+    
+     <select name="option">
+      <option value="Search for">Search for</option>
+      <option value="Admin">Admin</option>
+      <option value="Alumni">Alumni</option>
+      <option value="Faculty">Faculty</option>
+      <option value="Student">Student</option>
+     </select>
+     </div>
+
+    </div>
+
+
+   <div class="search-field">
+    <p class="choose">Division/Department</p>
+   
+    <div class="show">
+
+     <div class="boxes">
+      <input type="checkbox" name="geology">Geology <span class="count">46</span>
+     </div>
+
+     <div class="boxes">
+     <input type="checkbox" name="Mathematics">Mathematics <span class="count">26</span>
+     </div>
+
+     <div class="boxes">
+       <input type="checkbox" name="Computer Science">Computer Science <span class="count">134</span>
+     </div>
+
+     <div class="boxes">
+      <input type="checkbox" name="Commerce">Commerce <span class="count">134</span>
+     </div>
+
+     <select name="option">
+      <option value="Search for">Search for</option>
+      <option value="Admin">Admin</option>
+      <option value="Alumni">Alumni</option>
+      <option value="Faculty">Faculty</option>
+      <option value="Student">Student</option>
+     </select>
+    </div>
+   
+   </div>
+
+   <div class="search-field">
+    <p class="choose">Degree</p>
+   
+    <div class="show">
+       <div class="boxes">
+        <input type="checkbox" name="geology">B.C.A <span class="count">46</span>
+       </div>
+       
+       <div class="boxes">
+        <input type="checkbox" name="Mathematics"> B.A<span class="count">26</span>
+       </div>
+       
+       <div class="boxes">
+        <input type="checkbox" name="Computer Science">Computer Science <span class="count">134</span>
+       </div>
+       
+       <div class="boxes">
+        <input type="checkbox" name="Commerce">Commerce <span class="count">134</span>
+       </div>
+   
+     <select name="option">
+      <option value="Search for">Search for</option>
+      <option value="Admin">Admin</option>
+      <option value="Alumni">Alumni</option>
+      <option value="Faculty">Faculty</option>
+      <option value="Student">Student</option>
+     </select>
+    </div>
+   
+   </div>
+
+   <div class="search-field">
+    <p class="choose">Home Town</p>
+   
+    <div class="show">
+    <div class="boxes">
+     <input type="checkbox" name="geology">Geology <span class="count">46</span>
+    </div>
+    
+    <div class="boxes">
+     <input type="checkbox" name="Mathematics">Mathematics <span class="count">26</span>
+    </div>
+    
+    <div class="boxes">
+     <input type="checkbox" name="Computer Science">Computer Science <span class="count">134</span>
+    </div>
+    
+     <input type="text" placeholder="Location">
+
+    </div>
+   
+   </div>
+
+   <div class="search-field">
+    <p class="choose">Company</p>
+   
+    <div class="show">
+     <div class="boxes">
+      <input type="checkbox" name="geology">Geology <span class="count">46</span>
+     </div>
+     
+     <div class="boxes">
+      <input type="checkbox" name="Mathematics">Mathematics <span class="count">26</span>
+     </div>
+     
+     <div class="boxes">
+      <input type="checkbox" name="Computer Science">Computer Science <span class="count">134</span>
+     </div>
+     
+     <div class="boxes">
+      <input type="checkbox" name="Commerce">Commerce <span class="count">134</span>
+     </div>
+
+     <input type="text" placeholder="Company Name">
+   
+    </div>
+   
+   </div>
+
+   <div class="search-field">
+    <p class="choose">Designation</p>
+   
+    <div class="show">
+    <div class="boxes">
+     <input type="checkbox" name="geology">Geology <span class="count">46</span>
+    </div>
+    
+    <div class="boxes">
+     <input type="checkbox" name="Mathematics">Mathematics <span class="count">26</span>
+    </div>
+    
+    <div class="boxes">
+     <input type="checkbox" name="Computer Science">Computer Science <span class="count">134</span>
+    </div>
+    
+    <div class="boxes">
+     <input type="checkbox" name="Commerce">Commerce <span class="count">134</span>
+    </div>
+     <input type="text" placeholder="Search Designation">
+   
+    </div>
+   
+   </div>
+
+   <div class="search-field">
+    <p class="choose">Work Industry</p>
+   
+    <div class="show">
+        <div class="boxes">
+         <input type="checkbox" name="geology">Geology <span class="count">46</span>
+        </div>
+        
+        <div class="boxes">
+         <input type="checkbox" name="Mathematics">Mathematics <span class="count">26</span>
+        </div>
+        
+        <div class="boxes">
+         <input type="checkbox" name="Computer Science">Computer Science <span class="count">134</span>
+        </div>
+        
+        <div class="boxes">
+         <input type="checkbox" name="Commerce">Commerce <span class="count">134</span>
+        </div>
+   
+     <input type="text" placeholder="Search Work Industry">
+   
+    </div>
+   
+   </div>
+
+    <div class="search-field">
+     <p class="choose">Skill</p>
+    
+     <div class="show">
+      <div class="boxes">
+       <input type="checkbox" name="geology">Geology <span class="count">46</span>
+      </div>
+      
+      <div class="boxes">
+       <input type="checkbox" name="Mathematics">Mathematics <span class="count">26</span>
+      </div>
+      
+      <div class="boxes">
+       <input type="checkbox" name="Computer Science">Computer Science <span class="count">134</span>
+      </div>
+      
+      <div class="boxes">
+       <input type="checkbox" name="Commerce">Commerce <span class="count">134</span>
+      </div>
+    
+      <input type="text" placeholder="Search Skills">
+    
+     </div>
+    
+    </div>
+
+   </div>
+   
+   <!-- Main section  -->
+   <div class="main">
+
+    <div class="header">
+     <p class="pl-3"> <span id="value">1924</span> members in community</p>
+    </div>
+
+    <div class="member">
+     <img src="/img/photo-4.jpeg">
+
+     <div class="member-detail">
+      <a href="#" class="member-name">A. RAJA SEKARAN</a>
+      <p class="member-year">Student, class 2019</p>
+      <p class="member-degree">M.Sc Chemistry, Chemistry</p>
+      <p class="member-home-town">Tiruchirappalli</p>
+     </div>
+    </div>
+
+   </div>
+
+  </div>
+
+  <!-- Local js link  -->
+  <script src="js/controlPanel.js"></script>
+
+  <script>
+  $(".search-field").hover(
+    function () {
+      $(this).children('.show').show();
+    },
+    function () {
+      $(this).children('.show').hide();
+    }
+  );
+  
+  </script>
+</body>
+</html>
