@@ -2,8 +2,11 @@ var mongoose = require('mongoose');
 var dbConnection = require('./dbConnection');
 var User = require('./user_module');
 
-exports.createOne = function(dataSet){
+exports.createOne = function(dataSet,req,res){
  
+  var data = req.body;
+  console.log(data);
+
 // Create connection between server and DB 
 dbConnection.connect();
 
@@ -26,6 +29,7 @@ db.once("open", function() {
         console.log(docs);
         mongoose.connection.close();
         console.log("DB connection lost!");
+        res.sendFile(__dirname + "/Success.html");
       }
     }
   );

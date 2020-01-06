@@ -5,6 +5,8 @@ const mongoose = require('mongoose');
 const User = require("./user_module");
 const dbConnection = require('./dbConnection');
 const createOneDataInDb = require('./createOneDataInDb');
+const checkDataInDB = require('./checkDataInDB');
+
 
 // import express function 
 var app = express();
@@ -20,70 +22,24 @@ app.get('/', (req,res) => {
 });
 
 
-// Route for college 
+// Route for college sign_in GET
 app.get('/college_sign_in', (req,res) => {
-  res.redirect('/controlPanel');
+  res.redirect('/college_controlPanel');
 });
 
+// Route for college sign_up GET
 app.get("/college_sign_up", (req, res) => {
   res.render("college_sign_up");
 });
 
+// Route for college sign_up POST 
 app.post('/college_sign_up' , (req, res) => {
-
-  var data = req.body;
-  console.log(data);
-  
-
-  createOneDataInDb.createOne(data);
-
-  res.sendFile(__dirname + '/Success.html');
+  createOneDataInDb.createOne(data,req,res);
 });
 
-
-
-// Route for user info 
-app.get('/controlPanel', (req,res) => {
-
-//create connection 
-dbConnection.connect();
-
-var arrOfUser = [];
-var db = mongoose.connection;
-
-db.on("error", console.error.bind(console, "connection error:"));
-db.once("open", function() {
-  // we're connected!
-  console.log("Connection Established !");
-
-  User.find({}, {},
-    (err, docs) => {
-      if (err) console.log(err);
-      else {
-        console.log(docs);
-        docs.forEach((user) => {
-          // console.log(user);
-          arrOfUser.push(user);
-        })
-        mongoose.connection.close();
-        // console.log(arrOfUser);
-        
-        var user = arrOfUser[0]._username;
-        var email = arrOfUser[0]._email;
-        var password = arrOfUser[0]._password;
-
-        console.log(user);
-        
-        var numberOfMembers = arrOfUser.length;
-
-        res.render("controlPanel", { ArrOfUser: arrOfUser, NumberOfMembers : numberOfMembers});
-
-        console.log("DB connection lost!");
-      }
-    }
-  );
-});
-
+// Route for College_control_panel GET
+app.get('/college_controlPanel', (req,res) => {
+  checkDataInDB.checkData(res);
 });
  
 
