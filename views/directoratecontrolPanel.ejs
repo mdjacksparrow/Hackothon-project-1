@@ -123,105 +123,6 @@
   </div>
 
   <div class="search-field">
-    <p class="choose">Home Town</p>
-
-    <div class="show">
-      <div class="boxes">
-        <input type="checkbox" name="geology">Geology <span class="count">46</span>
-      </div>
-
-      <div class="boxes">
-        <input type="checkbox" name="Mathematics">Mathematics <span class="count">26</span>
-      </div>
-
-      <div class="boxes">
-        <input type="checkbox" name="Computer Science">Computer Science <span class="count">134</span>
-      </div>
-
-      <input type="text" placeholder="Location">
-
-    </div>
-
-  </div>
-
-  <div class="search-field">
-    <p class="choose">Company</p>
-
-    <div class="show">
-      <div class="boxes">
-        <input type="checkbox" name="geology">Geology <span class="count">46</span>
-      </div>
-
-      <div class="boxes">
-        <input type="checkbox" name="Mathematics">Mathematics <span class="count">26</span>
-      </div>
-
-      <div class="boxes">
-        <input type="checkbox" name="Computer Science">Computer Science <span class="count">134</span>
-      </div>
-
-      <div class="boxes">
-        <input type="checkbox" name="Commerce">Commerce <span class="count">134</span>
-      </div>
-
-      <input type="text" placeholder="Company Name">
-
-    </div>
-
-  </div>
-
-  <div class="search-field">
-    <p class="choose">Designation</p>
-
-    <div class="show">
-      <div class="boxes">
-        <input type="checkbox" name="geology">Geology <span class="count">46</span>
-      </div>
-
-      <div class="boxes">
-        <input type="checkbox" name="Mathematics">Mathematics <span class="count">26</span>
-      </div>
-
-      <div class="boxes">
-        <input type="checkbox" name="Computer Science">Computer Science <span class="count">134</span>
-      </div>
-
-      <div class="boxes">
-        <input type="checkbox" name="Commerce">Commerce <span class="count">134</span>
-      </div>
-      <input type="text" placeholder="Search Designation">
-
-    </div>
-
-  </div>
-
-  <div class="search-field">
-    <p class="choose">Work Industry</p>
-
-    <div class="show">
-      <div class="boxes">
-        <input type="checkbox" name="geology">Geology <span class="count">46</span>
-      </div>
-
-      <div class="boxes">
-        <input type="checkbox" name="Mathematics">Mathematics <span class="count">26</span>
-      </div>
-
-      <div class="boxes">
-        <input type="checkbox" name="Computer Science">Computer Science <span class="count">134</span>
-      </div>
-
-      <div class="boxes">
-        <input type="checkbox" name="Commerce">Commerce <span class="count">134</span>
-      </div>
-
-      <input type="text" placeholder="Search Work Industry">
-
-    </div>
-
-  </div>
-
-  <div class="search-field">
     <p class="choose">Skill</p>
 
     <div class="show">
@@ -260,9 +161,9 @@
     <% for(var i = 0; i < ArrOfUser.length; i++){ %>
     <div class="member">
       <img src="/img/photo-4.jpeg">
-
+      
       <div class="member-detail">
-        <a href="#" class="member-name"><%= ArrOfUser[i].collegeList %></a>
+        <a href =<%= ArrOfUser[i]._id %> style = "color: black; font-weight : bolder;"><%= ArrOfUser[i].collegeName %></a>
         <p class="member-year"><%= ArrOfUser[i].email %></p>
       </div>
     </div>
@@ -275,11 +176,38 @@
 
 <!-- Local js link  -->
 <script src="/js/controlPanel.js"></script>
+<script>
 
+var clgNames = document.querySelectorAll('.member-name');
+console.log(clgNames.length);
+
+// var check = document.querySelectorAll('.check');
+
+// for(let i = 0; i < clgNames.length; i++){
+
+//   check[i].addEventListener('click', () => {
+//     $.ajax({
+//       type: "post",
+//       url: "/filter-data",
+//       data: {
+//         collegeName : clgNames[i].innerHTML
+//       },
+//       success: function () {
+//         console.log('success');
+//       },
+//       error: function () {
+//         console.log('error');
+//       }
+//     });
+//   })
+
+// }
+
+
+</script>
 <!-- Hover effect link  -->
 <%- include('hoverEffect') -%>
 </body>
 
 <%- include('footer') -%>
-
 </html>

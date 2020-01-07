@@ -36,10 +36,14 @@
    <h1>College Sign Up Info</h1>
    <div class="input-flex">
     <i class="fas fa-user-tie" id="u"></i>
-    <input type="text" name="Username" id="username" placeholder="Collge Name" required>
-    <i id="user-check" class="indicator">&#33;</i>
+    <input type="text" list="college-name" name="CollegeName" id="ug-college-name" required placeholder="College Name">
+     <i id="ug-college-name-check" class="indicator">&#33;</i>
    </div>
 
+   <datalist id="college-name">
+    <option value="University College of Engineering(BIT campus)"></option>
+    <option value="Anna University(CEG campus)"></option>
+   </datalist>
    <div class="input-flex">
     <i class="fa fa-envelope" aria-hidden="true" id="e"></i>
     <input type="email" name="Email" id="email" placeholder="Email" required>

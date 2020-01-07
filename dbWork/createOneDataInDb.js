@@ -24,7 +24,7 @@ db.once("open", function() {
 
   DB.College.create(
     {
-      username: data.Username,
+      college: data.CollegeName,
       email: data.Email,
       password: data.Password
     },
@@ -39,7 +39,7 @@ db.once("open", function() {
 
   DB.Directorate.create(
     {
-      collegeList : data.Username,
+      collegeName : data.CollegeName,
       email : data.Email
     },
     (err, docs) => {
@@ -76,14 +76,14 @@ exports.createNewAlumni = function(req, res) {
         username: data.Username,
         course: data.Email,
         ugYearOfPassing: Number(data.Year_of_ug),
-        college: data.Ug_course,
+        college: data.College,
         city: data.City,
         regNo: data.Reg_number,
         password: data.Password,
         firstName: data.First_Name,
         secondName: data.Second_Name,
         phone: data.Phone,
-        pgCourse: data.pg_course,
+        pgCourse: data.Pg_course,
         pgYearOfPassing: Number(data.Year_of_pg),
         research: data.Research,
         researchYearOfPassing: Number(data.Research_year),

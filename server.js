@@ -3,6 +3,7 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const createOneDataInDb = require('./dbWork/createOneDataInDb');
 const checkDataInDB = require('./dbWork/checkDataInDB');
+const filter = require('./dbWork/filterDataInDB');
 
 // import express function 
 var app = express();
@@ -48,12 +49,22 @@ app.get('/directorate_control_panel', (req,res) => {
 });
 
 
-// Sample api calling request
-// app.get('/sample-api', (req,res) => {
-//   res.json({
-//     text : "lorem ipsumlsajflsjf slfdkjas fla lj sa sjf lskjaf ls fajf !"
-//   });
-// }); 
+// Filter data for BIT calling request
+app.get("/5e13750c2d47db0eb4f26657", (req, res) => {
+  filter.filterDataFromCollege(
+    "University College of Engineering(BIT campus)",
+    res
+  );
+}); 
+
+// Filter data for CEG calling request
+app.get("/5e13751f2d47db0eb4f26659", (req, res) => {
+  filter.filterDataFromCollege(
+    "Anna University(CEG campus)",
+    res
+  );
+}); 
+
 
 
 // Route for Alumni Sign In GET 

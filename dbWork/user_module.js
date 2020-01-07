@@ -2,12 +2,18 @@ var mongoose = require("mongoose");
 var Schema = mongoose.Schema;
 
 var directorateSchema = new Schema({
-  collegeList: String,
-  email : String
+  collegeName: {
+    type: String,
+    required: [true]
+  },
+  email: {
+    type: String,
+    required: [true]
+  }
 });
 
 var collegeSchema = new Schema({
-  username: {
+  college: {
     type: String,
     required: [true]
   },

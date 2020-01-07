@@ -1,0 +1,239 @@
+1.Updated with display method
+
+
+// Getting data form the server
+
+
+
+
+//manually storing records
+let users=[
+    {name:'sambath',regno:"4265507",email:'sachinmugu@gmail.com',password:'67867',year:'2005',degree:'BE',course:'CS74268574257642765767E'},
+    {name:'kumar',regno:"4265508",email:'sachi@gmail.com',password:'243536',year:'2006',degree:'BE',course:'CSE'},
+    {name:'prem',regno:"4265509",email:'mugu@gmail.com',password:'prem456',year:'2006',degree:'BE',course:'EEE'},
+    {name:'mani',regno:"4265510",email:'mani@gmail.com',password:'mani333',year:'2005',degree:'BE',course:'IT'},
+    {name:'raju',regno:"4265511",email:'raju@gmail.com',password:'sk',year:'2004',degree:'BE',course:'ECE'},
+    {name:'sambath',regno:"4265512",email:'sachinmugu@gmail.com',password:'67867',year:'2005',degree:'BE',course:'ECE'},
+    
+    ];
+    
+    
+    function search()
+    {
+      let filter1={
+      name:document.getElementById("name").value,
+      regno:document.getElementById("regno").value,
+      year:document.getElementById("year").value,
+      degree:document.getElementById("degree").value,
+      course:document.getElementById("course").value,
+      skills:document.getElementById("skills").value,
+      };
+
+
+
+    //Restoring filter
+    let filter={};
+    for(let key in filter1)
+    {
+        if(filter1[key]!="")
+            filter[key]=filter1[key];
+    }
+    
+    // Filtering records based on filters
+
+     users= users.filter(function(item) {
+      for (var key in filter)
+       {
+         console.log()
+        if (item[key] === undefined || item[key] != filter[key])
+        {
+          return false;
+        }
+    }
+      return true;
+    });
+    
+    // Displaying records with filter conditions
+    if(users.length==0)
+        console.log("no results found");
+    else
+        console.log(users)
+       
+    }
+
+
+
+
+
+
+
+2.Search function 
+/ Getting data form the server
+
+
+
+
+//manually storing records
+let users=[
+    {name:'sambath',email:'sachinmugu@gmail.com',password:'67867',year:'2005',degree:'BE',course:'CSE'},
+    {name:'kumar',email:'sachi@gmail.com',password:'243536',year:'2006',degree:'BE',course:'CSE'},
+    {name:'prem',email:'mugu@gmail.com',password:'prem456',year:'2006',degree:'BE',course:'EEE'},
+    {name:'mani',email:'mani@gmail.com',password:'mani333',year:'2005',degree:'BE',course:'IT'},
+    {name:'raju',email:'raju@gmail.com',password:'sk',year:'2004',degree:'BE',course:'ECE'},
+    {name:'sambath',email:'sachinmugu@gmail.com',password:'67867',year:'2005',degree:'BE',course:'ECE'},
+    
+    ];
+    
+    
+    function search()
+    {
+      const filter={
+      name:document.getElementById("name").value,
+      regno:document.getElementById("regno").value,
+      year:document.getElementById("year").value,
+      degree:document.getElementById("degree").value,
+      course:document.getElementById("course").value,
+      skills:document.getElementById("skills").value,
+      };
+    
+    
+    // Getting conditions from HTML page
+    console.log(filter.name);
+    console.log(users);
+    if(filter.name===users[0].name)
+      console.log("heyyy");
+    //users= users.filter(item,filter);
+    
+    //console.log(users)
+    let results=[];
+    let flag=true;
+
+    for(let i=0;i<users.length;i++)
+     {
+         item=users[i];
+        for (var key in filter)
+         {
+           console.log()
+          if (item[key] === undefined || item[key] != filter[key])
+            flag=false;
+            
+        }
+        if(flag==true)
+            results.push(item);
+        
+      };
+    
+    
+    
+    
+      console.log(results);
+    }
+
+
+
+
+
+3. with function 
+  
+// Getting data form the server
+
+
+
+
+//manually storing records
+let users=[
+    {name:'sambath',email:'sachinmugu@gmail.com',password:'67867',year:'2005',degree:'BE',course:'CSE'},
+    {name:'kumar',email:'sachi@gmail.com',password:'243536',year:'2006',degree:'BE',course:'CSE'},
+    {name:'prem',email:'mugu@gmail.com',password:'prem456',year:'2006',degree:'BE',course:'EEE'},
+    {name:'mani',email:'mani@gmail.com',password:'mani333',year:'2005',degree:'BE',course:'IT'},
+    {name:'raju',email:'raju@gmail.com',password:'sk',year:'2004',degree:'BE',course:'ECE'},
+    {name:'sambath',email:'sachinmugu@gmail.com',password:'67867',year:'2005',degree:'BE',course:'ECE'},
+    
+    ];
+    
+    
+    function search()
+    {
+      const filter={
+      name:document.getElementById("name").value,
+      regno:document.getElementById("regno").value,
+      year:document.getElementById("year").value,
+      degree:document.getElementById("degree").value,
+      course:document.getElementById("course").value,
+      skills:document.getElementById("skills").value,
+      };
+    
+    
+    // Getting conditions from HTML page
+    console.log(filter);
+    users= users.filter(function(item) {
+      for (var key in filter)
+       {
+         console.log()
+        if (item[key] === undefined || item[key] != filter[key])
+          return false;
+      }
+      return true;
+    });
+    
+    console.log(users)
+    
+    }
+
+
+3. Corrected search 
+  
+// Getting data form the server
+
+
+
+
+//manually storing records
+let users=[
+    {name:'sambath',email:'sachinmugu@gmail.com',password:'67867',year:'2005',degree:'BE',course:'CSE'},
+    {name:'kumar',email:'sachi@gmail.com',password:'243536',year:'2006',degree:'BE',course:'CSE'},
+    {name:'prem',email:'mugu@gmail.com',password:'prem456',year:'2006',degree:'BE',course:'EEE'},
+    {name:'mani',email:'mani@gmail.com',password:'mani333',year:'2005',degree:'BE',course:'IT'},
+    {name:'raju',email:'raju@gmail.com',password:'sk',year:'2004',degree:'BE',course:'ECE'},
+    {name:'sambath',email:'sachinmugu@gmail.com',password:'67867',year:'2005',degree:'BE',course:'ECE'},
+    
+    ];
+    
+    
+    function search()
+    {
+      let filter1={
+      name:document.getElementById("name").value,
+      regno:document.getElementById("regno").value,
+      year:document.getElementById("year").value,
+      degree:document.getElementById("degree").value,
+      course:document.getElementById("course").value,
+      skills:document.getElementById("skills").value,
+      };
+
+
+
+    //Restoring filter
+    let filter={};
+    for(let key in filter1)
+    {
+        if(filter1[key]!="")
+            filter[key]=filter1[key];
+    }
+    
+    // Filtering records based on filters
+
+     users= users.filter(function(item) {
+      for (var key in filter)
+       {
+         console.log()
+        if (item[key] === undefined || item[key] != filter[key])
+        {
+          return false;
+        }
+    }
+      return true;
+    });
+    
+    // Displaying records with filter conditions
+    console.log(users)
