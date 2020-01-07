@@ -162,16 +162,20 @@
     <div class="member">
       <img src="/img/photo-4.jpeg">
       
-      <div class="member-detail">
-        <a href =<%= ArrOfUser[i]._id %> style = "color: black; font-weight : bolder;"><%= ArrOfUser[i].collegeName %></a>
-        <p class="member-year"><%= ArrOfUser[i].email %></p>
+      <div style="width:  100%;">
+        <form action="/filter-data" method="POST">
+        <input type="text" name="Cname" value=<%= ArrOfUser[i].collegeName %> style = "border : none; outline : none; width :100%" readonly>
+        <button style ="color: black; font-weight : bolder; border: none; outline: none; background: none; padding: 0" type = "submit">
+          See
+        </button>
+      </form>
+        <p><%= ArrOfUser[i].email %></p>
       </div>
     </div>
 
     <% } %>
 
   </div>
-
 </div>
 
 <!-- Local js link  -->

@@ -50,11 +50,10 @@ app.get('/directorate_control_panel', (req,res) => {
 
 
 // Filter data for BIT calling request
-app.get("/5e13750c2d47db0eb4f26657", (req, res) => {
-  filter.filterDataFromCollege(
-    "University College of Engineering(BIT campus)",
-    res
-  );
+app.post("/filter-data", (req, res) => {
+  console.log();
+  
+  filter.filterDataFromCollege(req.body.Cname, res);
 }); 
 
 // Filter data for CEG calling request
