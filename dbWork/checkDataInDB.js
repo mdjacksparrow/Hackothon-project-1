@@ -39,8 +39,6 @@ db.once("open", function() {
 }
 
 
-
-
 // FROM College DB
 exports.checkDataFromCollege = function(res) {
 
@@ -75,6 +73,4 @@ db.once("open", function() {
     }
   });
 });
-
-
 }

@@ -67,6 +67,12 @@ var userSchema = new Schema({
   skills: []
 });
 
+var logindetailSchema = new Schema({
+  username : String,
+  password : String
+});
+
 exports.Alumni = mongoose.model("alumniDB", userSchema);
 exports.College = mongoose.model("collegeDB", collegeSchema);
 exports.Directorate = mongoose.model("directorate", directorateSchema);
+exports.loginDetail = mongoose.model("loginDetail", logindetailSchema)

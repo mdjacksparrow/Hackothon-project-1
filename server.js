@@ -4,6 +4,7 @@ const bodyParser = require('body-parser');
 const createOneDataInDb = require('./dbWork/createOneDataInDb');
 const checkDataInDB = require('./dbWork/checkDataInDB');
 const filter = require('./dbWork/filterDataInDB');
+const loginVerify = require('./dbWork/loginVerify');
 
 // import express function 
 var app = express();
@@ -20,8 +21,12 @@ app.get('/', (req,res) => {
 
 // Route for college sign_in GET
 app.get('/college_sign_in', (req,res) => {
-  res.redirect('/college_controlPanel');
+  res.render('college_sign_in');
 });
+
+app.post('/college_sign_in', (req, res) => {
+  loginVerify.checkCollegeLogin(req,res);
+})
 
 // Route for college sign_up GET
 app.get("/college_sign_up", (req, res) => {
@@ -35,13 +40,20 @@ app.post('/college_sign_up' , (req, res) => {
 
 // Route for College_control_panel GET
 app.get('/college_controlPanel', (req,res) => {
-  checkDataInDB.checkDataFromCollege(res);
+
+  filter.filterDataFromCollege(req.query.Cname, res);
+
 });
 
-// Route for Directorate sing in GET
-// app.get("/directorate_login", (req, res) => {
-//   res.redirect("/directorate_control_panel");
-// });
+// Route for Directorate sign in GET 
+app.get("/directorate_login", (req, res) => {
+  res.render('directorateLogin');
+});
+
+// Route for Directorate sign in POST
+app.post("/directorate_login", (req, res) => {
+  loginVerify.checkDirectorateLogin(req,res);
+});
 
 // Redirect for College_control_panel GET
 app.get('/directorate_control_panel', (req,res) => {
