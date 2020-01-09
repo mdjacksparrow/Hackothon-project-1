@@ -48,6 +48,10 @@ var userSchema = new Schema({
     type: String,
     required: [true]
   },
+   email: {
+    type: String,
+    required: [true]
+  },
   regNo: Number,
   password: {
     type: String,

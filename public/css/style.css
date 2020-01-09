@@ -29,7 +29,7 @@ h1,h2,h3,h4,h5,h6 {
 
 .menu {
 	position:fixed;
-	background-color:#;
+	/* background-color:#; */
 	z-index:9999;
 }
 
@@ -274,7 +274,7 @@ textarea#message{
 #contact-page .contact-wrap {
   margin-top: 20px;
 }
-ul.social-network {
+/* ul.social-network {
 	list-style:none;
 	margin-top:40px;
 	text-align:center;
@@ -290,5 +290,5 @@ ul.social-network li {
 ul.social-network li a {	
 	color:#6EE5A1;
 	
-}
+} */
 

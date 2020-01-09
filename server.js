@@ -5,6 +5,7 @@ const createOneDataInDb = require('./dbWork/createOneDataInDb');
 const checkDataInDB = require('./dbWork/checkDataInDB');
 const filter = require('./dbWork/filterDataInDB');
 const loginVerify = require('./dbWork/loginVerify');
+const findDataInAlumniDB = require('./dbWork/findParticularDataInDB');
 
 // import express function 
 var app = express();
@@ -90,8 +91,11 @@ app.get('/alumniContactProfile', (req,res) => {
   res.render('alumniContactProfile');
 });
 
-app.get("/aboutForAlumniProfile", (req, res) => {
-  res.render("aboutForAlumniProfile");
+
+
+app.post('/aboutForAlumni', (req, res) => {
+
+  findDataInAlumniDB.findAlumniInfo(req,res);
 });
 
 

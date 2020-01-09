@@ -74,7 +74,8 @@ exports.createNewAlumni = function(req, res) {
     DB.Alumni.create(
       {
         username: data.Username,
-        course: data.Email,
+        course: data.Ug_course,
+        email : data.Email,
         ugYearOfPassing: Number(data.Year_of_ug),
         college: data.College,
         city: data.City,

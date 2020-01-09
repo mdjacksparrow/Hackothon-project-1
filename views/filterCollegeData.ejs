@@ -261,12 +261,15 @@
   <div class="member">
    <img src="/img/photo-4.jpeg">
 
+  <form action='/aboutForAlumni' method="post">
    <div class="member-detail">
-    <a href="/aboutForAlumniProfile" class="member-name"><%= ArrOfUser[i].firstName + " " + ArrOfUser[i].secondName %></a>
-    <p class="member-year"><%= ArrOfUser[i].ugYearOfPassing %></p>
-    <p class="member-year"><%= ArrOfUser[i].regNo %></p>
-    <p class="member-year"><%= ArrOfUser[i].city %></p>
+     <a href="#" class="member-name"><%= ArrOfUser[i].firstName + " " + ArrOfUser[i].secondName %></a>
+     <input class="member-year" type="text" name="regNo" value= <%= ArrOfUser[i].regNo %> readonly>
+     <input class="member-home-town" type="text"  value= <%= ArrOfUser[i].ugYearOfPassing %> readonly>
+     <input class="member-degree" type="text"  value= <%= ArrOfUser[i].city %> readonly>
    </div>
+     <button type="submit">View profile</button>
+   </form>
   </div>
 
   <% } %>
@@ -277,19 +280,6 @@
 
 <!-- Local js link  -->
 <script src="/js/controlPanel.js"></script>
-<!-- <script>
- function callAPI() {
-  $(function () {
-   var msg = [];
-
-   $.get("/sample-api", (data) => {
-    msg = data;
-    console.log(msg);
-
-   })
-  });
- }
-</script> -->
 <!-- Hover effect link  -->
 <%- include('hoverEffect') -%>
 </body>

@@ -162,13 +162,13 @@ nav{
  color: rgb(204, 188, 188);
 }
 
-/* .sidebar .search-field .show{
+.sidebar .search-field .show{
  display: none;
 }
 
 .sidebar .search-field .hide{
   display: unset;
-} */
+}
 
 .main{
  width: 95%;
@@ -192,6 +192,8 @@ nav{
  margin-top: 1rem;
  display: flex;
  height: 100px;
+ /* width: 500px; */
+ position: relative;
 }
 
 .main .member img{
@@ -203,6 +205,7 @@ nav{
 
 .main .member .member-detail{
  padding: 1rem 1rem;
+ width: 500px;
 }
 
 .main .member .member-detail  p{
@@ -243,4 +246,31 @@ button[type = "submit"]{
 
 .sidebar .first-search-field{
   padding: 0;
+}
+
+.main .member button{
+  background: none;
+  position: absolute;
+  border: none;
+  outline: none;
+  right: 20px;
+  top: 0.8rem;
+  /* margin: 0.5rem; */
+  padding: 0.3rem 0.4rem;
+  cursor: pointer;
+  color: white;
+  background: #fb5b5a;
+}
+
+.main .member  button:hover{
+  background-color: #be5151;
+  color: white;
+}
+
+.main .member .member-detail  input[type = "text"]{
+  display: block;
+  border: none;
+  outline: none;
+  font-size: 0.8rem;
+  color: #aaa4a4;
 }
