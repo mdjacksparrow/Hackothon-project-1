@@ -1,0 +1,557 @@
+@import url('https://fonts.googleapis.com/css?family=Baloo+Bhai|Fira+Sans:300|Roboto+Mono|Ubuntu&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Alata&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Courgette&display=swap');
+
+
+body{
+   font-family:'Alata',monospace;
+}
+
+
+nav{
+ background-color: #fffdf9;
+ color: white;
+}
+
+
+.navbar-brand{
+ height: 60px;
+}
+
+.active{
+  color: white;
+ border-radius: 3px;
+}
+
+.nav-item{
+ margin: 0 15px;
+}
+
+.fa-sign-in,.fa-caret-down{
+ padding: 0 10px;
+ color: #fb5b5a;
+}
+
+.dropdown-item:hover{
+ background-color: #fb5b5a;
+ color: white;
+}
+
+.nav-link{
+ color: black;
+ display: inline-block;
+}
+
+.active{
+ background-color: #fb5b5a;
+ color: white;
+}
+
+.nav-item:hover,.nav-link:hover,.nav-item:hover , .nav-item:hover .fa-sign-in{
+ background-color: #fb5b5a;
+ color: white;
+}
+
+.nav-item:hover #drop,.nav-item:hover .fa-caret-down{
+ background-color: none;
+ color: white;
+}
+
+
+.nav-button{
+ border-radius: 3px;
+ background-color: #fb5b5a;
+}
+
+
+/* Banner  */
+.carousel-caption{
+ /* border: 1px solid red; */
+ /* margin-bottom:1em; */
+ color: #fb5b5a;
+ font-family: 'Alata',monospace;
+}
+
+.carousel-inner img{
+  width: 100vw;
+}
+
+.about-the-event{
+ background: url("/img/other/question.jpg");
+ background-size: cover;
+ color: white;
+ background-attachment: fixed;
+ /* border: 1px solid red; */
+ margin: auto;
+ padding: 3em;
+ width: 100%;
+}
+
+.display-4{
+ font-size: 2.3em;
+}
+
+.card-img-overlay{
+   /* border: 1px solid red; */
+   padding: 2em;
+   position: absolute;
+}
+.card-title{
+ position: absolute;
+ bottom: 1.4em;
+ left: 10px;
+  /* border: 1px solid red; */
+}
+
+.icons{
+ color: white;
+  /* border: 1px solid red; */
+  position: absolute;
+ bottom: 0.4em;
+ left: 15px;
+ padding: 0;
+
+}
+
+.fa-instagram,.fa-facebook-square,.fa-google-plus-g,.fa-linkedin{
+   /* border: 1px solid red; */
+   color: white;
+   padding: 0.2em;
+
+}
+
+.card-text{
+ /* border: 1px solid red; */
+ position: absolute;
+ bottom: 1em;
+ left: 15px;
+}
+
+/* Event schedule  */
+.event-schedule > h3{
+ color: #162357;
+}
+
+.day{
+ /* border: 1px solid black; */
+ padding: 1em;
+}
+
+.day-container{
+  /* border: 1px solid black; */
+ width: 100%;
+} 
+
+.day-container button{
+ width: 32%;
+ background-color: #162357;
+}
+
+.day-container > button:first-child{
+ background-color: rgb(230, 38, 38);
+}
+
+.registration .description{
+ color: rgb(21, 88, 124);
+ font-style: italic;
+}
+
+.registration{
+ color: #162357;
+}
+
+.registration .reg img{
+  /* border: 1px solid red; */
+  width: 100px;
+ float: left;
+ width: 70px;
+ height: 70px;
+ padding: 0.5em;
+ border-radius: 10em;
+ }
+
+
+.eventVenue > h3{
+ color:#162357;
+ font-size: 2.3em;
+}
+
+.eventVenue > p{
+ font-size: 1.3em;
+}
+
+.conference-description{
+ padding: 2em;
+ background: url("/img/other/banner-3.jpg");
+ background-size: cover;
+ color: white;
+}
+
+.conference-description > h3{
+  font-size: 2.3em;
+font-family: 'Alata', sans-serif;
+}
+
+.card-size img{
+ height: 250px;
+}
+
+
+/* Hotel section  */
+.hotels > h3{
+ color: #162357;
+ font-size: 2.3em;
+}
+
+.hotels > p{
+ font-size: 1.3em; 
+}
+
+.card-body > h3{
+ padding: 5px;
+ font-size: 1.5em;
+ color: white;
+ /* border: 1px solid black; */
+ }
+
+ .stars{
+  position: absolute;
+  top: 0.4em;
+  left: 1.4em;
+ }
+
+ .checked{
+  color: #fdcc0d;
+ }
+
+ .carousel img{
+  width: 100vw;
+ }
+
+ /* gallery */
+ .gallery  > h3{
+  color: #162357;
+  font-size: 2.3em;
+ }
+
+ .gallery > p{
+  font-size: 1.3em;
+ }
+
+
+ .sponsors > h3{
+  color: #162357;
+  text-align: center;
+  font-size: 2.3em;
+ }
+
+ .sponsors img{
+  height: 100px;
+  width: 250px;
+  padding: 1em;
+  margin: auto;
+ }
+
+
+ .faq > h3{
+   color: #162357;
+   text-align: center;
+   font-size: 2.3em;
+ }
+
+ .faq a{
+   text-decoration: none;
+   color: #162357;
+   width: 100%;
+   font-weight: bolder;
+   float: left;
+ }
+
+ .faq a span{
+  padding: 1em;
+  float: right;
+ }
+
+ .faq a:hover{
+   color: #C33C54;
+ }
+
+.faq-container button{
+  margin-top: 0.5em;
+}
+
+ /* newsletter section  */
+ .newsletter{
+   height: 300px;
+   width: 100%;
+   background-size: cover;
+   background: url("/img/other/newsletter.jpg");
+   color: white;
+   position: relative;
+   padding: 2em;
+ }
+
+ .newsletter h3{
+   margin: auto;
+   text-align: center;
+   font-family: 'Alata', monospace;
+   width: 70%;
+ }
+
+.newsletter p{
+  padding: .3em;
+  text-align: center;
+}
+
+input[type = "email"]{
+  height: 6vh;
+  width: 15rem;
+  outline: none;
+  padding-left: 10px;
+  border: none;
+  margin: 3px;
+  margin: auto;
+  display: block;
+  /* border: 1px solid red; */
+  border-radius: 5px;
+}
+
+.newsletter button{
+  height: 6vh;
+  width: 10em;
+  border: none;
+  margin: auto;
+  display: block;
+  margin-top: 10px;
+}
+
+.subscribe{
+  margin: auto;
+}
+
+.tickets > h3{
+  color: #162357;
+  /* border: 1px solid black; */
+  text-align: center;
+  font-size: 2.3em;
+}
+
+.tickets > p {
+  font-size: 1.3em;
+}
+
+.ticket-container h6{
+  font-size: 0.8em;
+  /* border: 1px solid black; */
+  text-align: center;
+  font-family: 'Alata',monospace;
+
+}
+
+.ticket-container .card-header p{
+  /* border: 1px solid black; */
+  text-align: center;
+  font-family: 'Courgette', cursive;
+  font-size: 3em;
+}
+
+.ticket-container .card-body p{
+font-size: 1em;
+text-align: left;
+padding-left: 10px;
+}
+
+.ticket-container .card-footer button{
+  display: block;
+  margin: auto;
+  width: 180px;
+}
+
+.contact > h3{
+  text-align: center;
+  font-size: 2.3em;
+  color: #153B50;
+}
+
+.contact > p{
+  text-align: center;
+  font-size: 1.3em;
+}
+
+.contact-info h3{
+  /* border: 1px solid black; */
+  margin-top: 1em;
+  text-align: center;
+  font-size: 1em;
+  color: #162357;
+}
+
+.contact-info p{
+  text-align: center;
+}
+
+.contact-info a{
+  display: block;
+  text-decoration: none;
+  text-align: center;
+}
+
+
+
+.form input[type="text"]{
+  display: block;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  outline: none;
+  margin: auto;
+  padding: 5px;
+  width: 80%;
+  margin-top:10px;
+}
+
+.form textarea{
+  margin:auto;
+  display: block;
+  margin-top:15px;
+  width: 80%;
+  padding: 5px;
+}
+
+.form button{
+  /* border: 1px solid black; */
+  display: block;
+  margin: auto;
+  margin-top: 15px;
+  outline: none;
+  /* border: 1px solid rgba(0, 0, 0, 0.2); */
+}
+
+/* footer section  */
+.contact-us{
+/* border: 1px solid red; */
+background-color:#090e22;
+color: white;
+width: 100%;
+margin: auto;
+}
+
+.contact-us .contact-us-info{
+  padding: 2em 4em;
+  /* border: 1px solid white; */
+  width: 100%;
+}
+
+.contact-us .head h3{
+  font-family: 'Alata',monospace;
+  font-size: 2.3em;
+}
+
+.contact-us .head p{
+  padding: 0 1em;
+}
+
+.contact-us .contact-us-info h3{
+  font-size: 1em;
+}
+
+.contact-us .contact-us-links a{
+  display: block;
+  color: white;
+  text-decoration: none;
+  font-size: 1em;
+}
+
+.contact-us .contact-us-links .fa-chevron-right{
+  padding: 10px;
+}
+
+.contact-us .contact-us-links a:hover{
+  /* padding: 10px; */
+  color: #C33C54;
+}
+
+.contact-us .contact-us-info-1  p{
+  /* display: inline-block; */
+  /* width: 50%; */
+  /* border:1px solid white; */
+  padding: 1em 0;
+}
+
+.contact-us .contact-us-icons a{
+  /* border: 1px solid white; */
+  font-size: 1.3em;
+  padding: 5px;
+  border-radius: 50%;
+  background-color: #153B50;
+}
+
+.contact-us .contact-us-icons a:hover{
+  background-color: #C33C54;
+  transition: 0.8s;
+}
+
+footer{
+  background-color: #153B50;
+  padding: 1em;
+}
+
+footer p{
+  color: white;
+  text-align: center;
+}
+
+/* Horizontal border  */
+.center-mark{
+  border: 2.5px solid rgb(238, 42, 78);
+  width: 50px;
+}
+
+.hr-full-width{
+   border: 0.9px solid rgb(238, 42, 78);
+  /* width: 50px; */
+}
+
+.hr-full-light{
+ border: 0.8px solid rgba(0,0, 0,0.17);
+}
+
+.hr-full-grey{
+  border: 0.3px solid rgba(173, 168, 168, 0.17);
+}
+
+/* top button  */
+.top{
+  /* display:none; */
+  position: fixed;
+  border-radius: 50%;
+  left: 10px;
+  bottom: 10px;
+  z-index: 99;
+}
+
+@media (max-width : 600px){
+  .carousel-inner img{
+  width: 100vw;
+  height: 50vh;
+}
+
+.nav-item .nav-link{
+ /* margin: 0 15px; */
+ display: block;
+ width: 100%;
+ padding: 1rem 1rem;
+}
+
+.fa-sign-in{
+ padding: 10px;
+}
+
+.navbar-header{
+ margin: 0 0 0 2rem;
+ width: 250px;
+}
+
+.navbar-header h2{
+ margin: 0;
+ font-size: 0.9rem;
+}
+}

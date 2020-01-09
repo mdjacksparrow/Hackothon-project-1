@@ -8,7 +8,7 @@ exports.findAlumniInfo = function(req,res) {
 //create connection 
 dbConnection.connect();
 
-const alumniReg = req.body.regNo;
+let alumniReg = req.body.regNo;
 
 var db = mongoose.connection;
 
@@ -18,7 +18,7 @@ db.once("open", function() {
   console.log("Connection Established !");
 
   DB.Alumni.findOne({regNo : alumniReg}, {}, (err, docs) => {
-    if (err) console.log(err);
+    if (err) console.log("error occured");
     else {
       console.log(docs);
 
@@ -36,3 +36,36 @@ db.once("open", function() {
   });
 });
 }
+
+
+// Finding alumni By using EMAIL 
+exports.findAlumniInfoByEmail = function(alumniEmail, res) {
+  //create connection
+  dbConnection.connect();
+
+  var db = mongoose.connection;
+
+  db.on("error", console.error.bind(console, "connection error:"));
+  db.once("open", function() {
+    // we're connected!
+    console.log("Connection Established !");
+
+    DB.Alumni.findOne({ email: alumniEmail }, {}, (err, docs) => {
+      if (err) console.log(err);
+      else {
+        console.log(docs);
+
+        mongoose.connection.close();
+
+        res.render("aboutForAlumniProfile", {
+          name: `${docs.firstName} ${docs.secondName}`,
+          city: docs.city,
+          email: docs.email,
+          phone: docs.phone
+        });
+
+        console.log("DB connection lost!");
+      }
+    });
+  });
+};

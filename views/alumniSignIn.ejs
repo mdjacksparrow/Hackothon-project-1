@@ -4,29 +4,30 @@
 
 
  <!-- Container of Login  -->
- <div class="cont">
-  <h3>Login</h3>
-  <div class="username">
-   <i class="fas fa-user-tie" id="user"></i>
-   <input type="text" name="Username" id="username" placeholder="Username" required>
+ <form action="/alumni_sign_in" method="post">
+  <div class="cont">
+   <h3>Login</h3>
+   <div class="username">
+    <i class="fa fa-envelope" id="user"></i>
+    <input type="text" name="Email" id="username" placeholder="Email" required>
+   </div>
+  
+   <div class="password">
+    <i class="fas fa-unlock-alt" id="pass"></i>
+    <input type="password" name="Password" id="password" placeholder="Password" required>
+   </div>
+  
+   <div class="btn">
+    <button type="submit">LOG IN</button>
+    <a href="#" class="forgotten-pass">Forgotten password?</a>
+   </div>
+  
+   <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Cupiditate, quidem qui iure aliquam tempora praesentium
+    mollitia possimus.
+    <a href="/alumni_sign_up" class="sign-up">Sign up</a>
+   </p>
   </div>
- 
-  <div class="password">
-   <i class="fas fa-unlock-alt" id="pass"></i>
-   <input type="password" name="Password" id="password" placeholder="Password" required>
-  </div>
- 
-  <div class="btn">
-   <button type="button">LOG IN</button>
-   <a href="#" class="forgotten-pass">Forgotten password?</a>
-  </div>
- 
-  <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Cupiditate, quidem qui iure aliquam tempora praesentium
-   mollitia possimus.
-   <a href="/alumni_sign_up" class="sign-up">Sign up</a>
-  </p>
- </div>
-
+ </form>
 
 <%- include('footer') -%>
 </body>

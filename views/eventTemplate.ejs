@@ -1,0 +1,795 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+ <meta charset="UTF-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+ <!-- Link section for icons  -->
+ <script src="https://kit.fontawesome.com/e2169f0192.js"></script>
+ <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+ <!-- Link for bootstrap.css  -->
+ <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+
+ <!-- Link for jquery.js  -->
+ <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+ <!-- Link for popper.js  -->
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+
+ <!-- Link for bootstrap.js  -->
+ <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+
+ <!-- Link for google api  -->
+ <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_KEY&callback=myMap"></script>
+
+ <!-- link for stylesheet  -->
+ <link rel="stylesheet" href="/css/eventStyle.css">
+
+ <!-- link for script.js -->
+ <script src="/js/eventScript.js"></script>
+
+ <script>
+
+  // click to go top of the page
+  $(document).ready(function () {
+   $('.scrollToTop').click(function () {
+    $('html,body').animate({ scrollTop: 0 }, 800);
+
+    return false;
+   })
+  })
+ </script>
+ <title>Alumni Events</title>
+</head>
+
+<body>
+
+ <!-- top move button  -->
+ <button class="top btn btn-danger scrollToTop" id="myBtn"><span class="fa fa-chevron-up"></span></button>
+
+<%- include('navbar') -%>
+
+ <!-- carousel container  -->
+ <div class="carousel">
+  <div class="carousel-inner">
+   <img src="/img/Alumni/photo-1.jpeg" alt="Banner">
+  </div>
+
+  <div class="carousel-caption">
+   <!-- <h2 class="">THE ANNUAL <span class="text-danger">MARKETING</span> CONFERENCE</h2>
+   <p>10-12 December, Downtown Conference Center, New York</p> -->
+
+   <button class="btn btn-danger text-white rounded-pill" id="about-button">About The Event</button>
+  </div>
+ </div>
+
+ <!-- Three column section with fixed background  -->
+ <div class="row  container-fluid about-the-event p-3">
+  <div class="col-lg-4 container">
+   <h2 class="display-4">About The Event</h2>
+   <p>Sed nam ut dolor qui repellendus iusto odit. Possimus inventore eveniet accusamus error amet eius aut accusantium
+    et.
+    Non odit consequatur repudiandae sequi ea odio molestiae. Enim possimus sunt inventore in est ut optio sequi unde.
+   </p>
+  </div>
+  <div class="col-lg-3 container">
+   <h4 class="display-4">WHERE</h4>
+   <p>Downtown Conference Center, New York</p>
+  </div>
+  <div class="col-lg-3 container">
+   <h4 class="display-4">WHEN</h4>
+   <p>Monday to Wednesday <br>
+    10-12 December</p>
+  </div>
+ </div>
+
+ <!-- Event Speakers with 3 column section  -->
+ <a name="speakers"></a>
+ <div class="even-speakers container-fluid text-center mt-5">
+  <h2>EVENT SPEAKERS</h2>
+  <p>Here are some out speakers</p>
+
+  <hr class="center-mark">
+
+  <div class="container-fluid card-deck">
+   <div class="card">
+    <img src="/img/speaker/speaker-1.jpg" alt="" class="card-img-top">
+    <div class="card-img-overlay">
+     <h3 class="card-title text-white ">
+      Brenden Legros
+     </h3>
+     <p class="card-text  text-white">Quas alias incidunt</p>
+     <div class="icons">
+      <a href="#"><i class="fab fa-instagram"></i></a>
+      <a href="#"><i class="fab fa-facebook-square"></i></a>
+      <a href="#"><i class="fab fa-google-plus-g"></i></a>
+      <a href="#"><i class="fab fa-linkedin"></i></a>
+     </div>
+    </div>
+   </div>
+
+   <div class="card">
+    <img src="/img/speaker/speaker-2.jpg" alt="" class="card-img-top">
+    <div class="card-img-overlay">
+     <h3 class="card-title text-white">
+      Hubert Hirthe
+     </h3>
+     <p class="card-text  text-white">Consequuntur odio aut</p>
+     <div class="icons">
+      <a href="#"><i class="fab fa-instagram"></i></a>
+      <a href="#"><i class="fab fa-facebook-square"></i></a>
+      <a href="#"><i class="fab fa-google-plus-g"></i></a>
+      <a href="#"><i class="fab fa-linkedin"></i></a>
+     </div>
+    </div>
+   </div>
+  </div>
+
+  <div class="container-fluid card-deck col-lg-12">
+   <div class="card">
+    <img src="/img/speaker/speaker-3.jpg" alt="" class="card-img-top">
+    <div class="card-img-overlay">
+     <h3 class="card-title text-white">
+      Cole Emmerich
+     </h3>
+     <p class="card-text  text-white">Fugiat laborum et</p>
+     <div class="icons">
+      <a href="#"><i class="fab fa-instagram"></i></a>
+      <a href="#"><i class="fab fa-facebook-square"></i></a>
+      <a href="#"><i class="fab fa-google-plus-g"></i></a>
+      <a href="#"><i class="fab fa-linkedin"></i></a>
+     </div>
+    </div>
+   </div>
+
+   <div class="card">
+    <img src="/img/speaker/speaker-4.jpg" alt="" class="card-img-top">
+    <div class="card-img-overlay">
+     <h3 class="card-title text-white">
+      Jack Christiansen
+     </h3>
+     <p class="card-text  text-white">Debitis iure vero</p>
+     <div class="icons">
+      <a href="#"><i class="fab fa-instagram"></i></a>
+      <a href="#"><i class="fab fa-facebook-square"></i></a>
+      <a href="#"><i class="fab fa-google-plus-g"></i></a>
+      <a href="#"><i class="fab fa-linkedin"></i></a>
+     </div>
+    </div>
+   </div>
+  </div>
+
+  <div class="container-fluid card-deck col-lg-12">
+   <div class="card">
+    <img src="/img/speaker/speaker-5.jpg" alt="" class="card-img-top">
+    <div class="card-img-overlay">
+     <h3 class="card-title text-white">
+      Alejandrin Littel
+     </h3>
+     <p class="card-text  text-white">Qui molestiae natua</p>
+     <div class="icons">
+      <a href="#"><i class="fab fa-instagram"></i></a>
+      <a href="#"><i class="fab fa-facebook-square"></i></a>
+      <a href="#"><i class="fab fa-google-plus-g"></i></a>
+      <a href="#"><i class="fab fa-linkedin"></i></a>
+     </div>
+    </div>
+   </div>
+
+   <div class="card">
+    <img src="/img/speaker/speaker-6.jpg" alt="" class="card-img-top">
+    <div class="card-img-overlay">
+     <h3 class="card-title text-white">
+      Willow Trantow
+     </h3>
+     <p class="card-text  text-white">Non autem dicta</p>
+     <div class="icons">
+      <a href="#"><i class="fab fa-instagram"></i></a>
+      <a href="#"><i class="fab fa-facebook-square"></i></a>
+      <a href="#"><i class="fab fa-google-plus-g"></i></a>
+      <a href="#"><i class="fab fa-linkedin"></i></a>
+     </div>
+    </div>
+   </div>
+  </div>
+ </div>
+
+ <hr>
+
+ <!-- Event schedule  -->
+ <div class="event-schedule container mt-5">
+  <h3 class="text-center">EVENT SCHEDULE</h3>
+  <p class="text-center text-secondary">Here is out event schedule</p>
+
+  <hr class="center-mark">
+
+  <div class="row day">
+   <div class="day-container">
+    <button class="btn btn-danger rounded-pill font-weight-bolder">Day 1</button>
+    <button class="btn btn-dark rounded-pill font-weight-bolder">Day 2</button>
+    <button class="btn btn-dark rounded-pill font-weight-bolder">Day 3</button>
+   </div>
+  </div>
+
+  <div class="registration container">
+   <p class="description">
+    Voluptatem nulla veniam soluta et corrupti consequatur neque eveniet officia. Eius necessitatibus voluptatem quis
+    labore
+    perspiciatis quia.
+   </p>
+
+   <div class="row">
+    <p class="text-secondary">09:30 AM</p>
+    <div class="col-sm-10">
+     <p><strong class="font-color">Registration</strong></p>
+     <p class="font-color">Fugit voluptas iusto maiores temporibus autem numquam magnam.</p>
+    </div>
+   </div>
+
+   <hr class="hr-full-light">
+
+   <div class="row reg">
+    <p class="text-secondary">10:00 AM</p>
+    <div class="col-sm-10">
+     <img src="/img/ico-img/icon-1.jpg" alt="" style="width: 70px;height: 70px;">
+     <p><strong class="font-color">Keynote</strong><span class="font-italic"> Brenden Legros</span></p>
+     <p class="font-italic"> Facere provident incidunt quos voluptas.</p>
+    </div>
+   </div>
+
+   <hr class="hr-full-light">
+
+   <div class="row reg">
+    <p class="text-secondary">11:00 AM</p>
+    <div class="col-sm-10">
+     <img src="/img/ico-img/icon-2.jpg" alt="">
+     <p><strong>Et voluptatem iusto dicta nobis.</strong><span class="font-italic"> Hubert Hirthe</span></p>
+     <p class="font-italic">Maiores dignissimos neque qui cum accusantium ut sit sint inventore.</p>
+    </div>
+   </div>
+
+   <hr class="hr-full-light">
+
+   <div class="row reg">
+    <p class="text-secondary">12:00 PM</p>
+    <div class="col-sm-10">
+     <img src="/img/ico-img/icon-3.jpg" alt="">
+     <p><strong>Explicabo et rerum quis et ut ea.</strong><span class="font-italic"> Cole Emmerich</span></p>
+     <p class="font-italic"> Veniam accusantium laborum nihil eos eaque accusantium aspernatur.</p>
+    </div>
+   </div>
+
+   <hr class="hr-full-light">
+
+   <div class="row reg">
+    <p class="text-secondary">2:00 PM</p>
+    <div class="col-sm-10">
+     <img src="/img/ico-img/icon-4.jpg" alt="">
+     <p><strong>Qui non qui vel amet culpa sequi.</strong><span class="font-italic"> Jack Christiansen</span></p>
+     <p class="font-italic">Nam ex distinctio voluptatem doloremque suscipit iusto.</p>
+    </div>
+   </div>
+
+   <hr class="hr-full-light">
+
+   <div class="row reg">
+    <p class="text-secondary">3:00 PM</p>
+    <div class="col-sm-10 ">
+     <img src="/img/ico-img/icon-5.jpg" alt="">
+     <p><strong>Quos ratione neque expedita asperiores.</strong><span class="font-italic"> Alejandrin Littel</span></p>
+     <p class="font-italic">Eligendi quo eveniet est nobis et ad temporibus odio quo.</p>
+    </div>
+   </div>
+
+   <hr class="hr-full-light">
+   <div class="row reg">
+    <p class="text-secondary">4:00 PM</p>
+    <div class="col-sm-10">
+     <img src="/img/ico-img/icon-6.jpg" alt="">
+     <p><strong>Quo qui praesentium nesciunt</strong><span class="font-italic"> Willow Trantow</span></p>
+     <p class="font-italic">Voluptatem et alias dolorum est aut sit enim neque veritatis.</p>
+    </div>
+   </div>
+
+   <hr class="hr-full-light">
+  </div>
+ </div>
+ <!-- Event venue with two container
+      1. two column section
+      2. four column section
+ -->
+ <a name="venue"></a>
+ <div class="eventVenue container-fluid mt-5">
+  <h3 class="text-center font-weight-bolder">EVENT VENUE </h3>
+  <P class="text-center text-secondary">Event venue location info and gallery</P>
+
+  <hr class="center-mark">
+
+  <!-- Description  -->
+  <div class="col-sm-12 col-md-12 col-lg-12 conference-description">
+   <h3>Downtown Conference Center, Goa India</h3>
+   <p>Iste nobis eum sapiente sunt enim dolores labore accusantium autem. Cumque beatae ipsam. Est quae sit qui
+    voluptatem
+    corporis velit. Qui maxime accusamus possimus. Consequatur sequi et ea suscipit enim nesciunt quia velit.</p>
+  </div>
+
+  <div class="container-fluid text-center mt-3 card-columns card-size">
+   <div class="card">
+    <img src="/img/conference/con-3.jpg" alt="" class="card-img-top">
+   </div>
+
+   <div class="card ">
+    <img src="/img/conference/con-4.jpg" alt="" class="card-img-top">
+   </div>
+
+   <div class="card ">
+    <img src="/img/conference/con-5.jpg" alt="" class="card-img-top">
+   </div>
+
+   <div class="card">
+    <img src="/img/conference/con-6.jpg" alt="" class="card-img-top">
+   </div>
+
+   <div class="card">
+    <img src="/img/conference/con-7.jpg" alt="" class="card-img-top">
+   </div>
+
+   <div class="card">
+    <img src="/img/conference/con-8.jpg" alt="" class="card-img-top">
+   </div>
+
+   <div class="card">
+    <img src="/img/conference/con-9.jpg" alt="" class="card-img-top">
+   </div>
+   <div class="card">
+    <img src="/img/conference/con-10.jpg" alt="" class="card-img-top">
+   </div>
+   <div class="card">
+    <img src="/img/conference/con-11.jpg" alt="" class="card-img-top">
+   </div>
+  </div>
+ </div>
+
+ <!-- Hotel with three column section  -->
+ <a name="hotels"></a>
+ <div class="hotels container mt-5">
+  <h3 class="font-weight-bolder text-center">HOTELS</h3>
+  <p class="text-secondary font-italic text-center">Her are some nearby hotels</p>
+
+  <hr class="center-mark">
+
+  <div class="row">
+
+   <div class="card col-md-4">
+    <img src="/img/hotels/hotel-1.jpg" alt="" class="card-img-top">
+
+    <div class="card-body">
+     <h3 class="font-weight-bolder card-title">Hotel - 1</h3>
+     <!-- Stars  -->
+     <p class="font-italic text-secondary card-text">0.4 Mile from the Venue</p>
+    </div>
+    <div class="stars">
+     <span class="fa fa-star checked"></span>
+     <span class="fa fa-star checked"></span>
+     <span class="fa fa-star checked"></span>
+     <span class="fa fa-star checked"></span>
+     <span class="fa fa-star checked"></span>
+    </div>
+   </div>
+
+   <div class="card col-md-4">
+    <img src="/img/hotels/hotel-2.jpg" alt="" class="card-img-top">
+
+    <div class="card-body">
+     <h3 class="card-title font-weight-bolder">Hotel - 2</h3>
+     <!-- Stars  -->
+     <p class="font-italic text-secondary card-text">0.5 Mile from the Venue</p>
+    </div>
+    <div class="stars">
+     <span class="fa fa-star checked"></span>
+     <span class="fa fa-star checked"></span>
+     <span class="fa fa-star checked"></span>
+     <span class="fa fa-star checked"></span>
+     <span class="fa fa-star "></span>
+    </div>
+   </div>
+
+   <div class="card col-md-4">
+    <img src="/img/hotels/hotel-3.jpg" alt="" class="card-img-top">
+
+    <div class="card-body">
+     <h3 class="card-title font-weight-bolder">Hotel - 3</h3>
+     <!-- Stars  -->
+     <p class="font-italic text-secondary card-text">0.6 Mile from the Venue</p>
+    </div>
+    <div class="stars">
+     <span class="fa fa-star checked"></span>
+     <span class="fa fa-star checked"></span>
+     <span class="fa fa-star checked"></span>
+     <span class="fa fa-star "></span>
+     <span class="fa fa-star "></span>
+    </div>
+   </div>
+  </div>
+ </div>
+
+ <hr>
+
+ <!-- Gallery with carousel event  -->
+ <a name="gallery"></a>
+ <div class="gallery  mt-5">
+  <h3 class="font-weight-bolder text-center">GALLERY</h3>
+  <p class="text-secondary text-center">Check our gallery from the recent events</p>
+
+  <hr class="center-mark">
+
+  <div class="carousel slide" id="head" data-ride="slide">
+   <!-- for indication or navigation  -->
+   <ul class="carousel-indicators">
+    <li class="active" data-target="#head" data-slide-to="0"></li>
+    <li class="" data-target="#head" data-slide-to="1"></li>
+    <li class="" data-target="#head" data-slide-to="2"></li>
+    <li class="" data-target="#head" data-slide-to="3"></li>
+    <li class="" data-target="#head" data-slide-to="4"></li>
+    <li class="" data-target="#head" data-slide-to="5"></li>
+    <li class="" data-target="#head" data-slide-to="6"></li>
+    <li class="" data-target="#head" data-slide-to="7"></li>
+   </ul>
+
+   <!-- slides  -->
+   <div class="carousel-inner slide">
+    <div class="carousel-item active">
+     <img src="/img/gallary_image/gallery-1.jpg" alt="">
+    </div>
+
+    <div class="carousel-item">
+     <img src="/img/gallary_image/gallery-2.jpg" alt="">
+    </div>
+
+
+    <div class="carousel-item">
+     <img src="/img/gallary_image/gallery-3.jpg" alt="">
+    </div>
+
+    <div class="carousel-item">
+     <img src="/img/gallary_image/gallery-4.jpg" alt="">
+    </div>
+
+    <div class="carousel-item">
+     <img src="/img/gallary_image/gallery-5.jpg" alt="">
+    </div>
+
+    <div class="carousel-item">
+     <img src="/img/gallary_image/gallery-6.jpg" alt="">
+    </div>
+
+    <div class="carousel-item">
+     <img src="/img/gallary_image/gallery-7.jpg" alt="">
+    </div>
+
+    <div class="carousel-item">
+     <img src="/img/gallary_image/gallery-8.jpg" alt="">
+    </div>
+   </div>
+
+   <!-- prev and next icons  -->
+   <a href="#head" class="carousel-control-prev" data-slide="prev">
+    <span class="carousel-control-prev-icon"></span>
+   </a>
+   <a href="#head" class="carousel-control-next" data-slide="next">
+    <span class="carousel-control-next-icon"></span>
+   </a>
+
+  </div>
+
+  <hr>
+
+ </div>
+
+ <!-- Sponsors with four column section  -->
+ <a name="sponsors"></a>
+ <div class="sponsors mt-5">
+  <h3 class="font-weight-bolder">
+   SPONSORS
+  </h3>
+
+  <hr class="center-mark">
+
+  <div class="row m-sm-5">
+   <div class="card col-md-4 col-xl-3 p-sm-4">
+    <img src="/img/sponsors/sponsor-1.png" alt="" class="card-img-top">
+   </div>
+
+   <div class="card col-md-4 col-xl-3 p-sm-4">
+    <img src="/img/sponsors/sponsor-2.png" alt="">
+   </div>
+
+   <div class="card col-md-4 col-xl-3 p-sm-4">
+    <img src="/img/sponsors/sponsor-3.png" alt="">
+   </div>
+
+   <div class="card col-md-4 col-xl-3">
+    <img src="/img/sponsors/sponsor-4.png" alt="">
+   </div>
+
+   <div class="card col-md-4 col-xl-4 p-sm-4">
+    <img src="/img/sponsors/sponsor-5.png" alt="">
+   </div>
+
+   <div class="card col-md-4 col-xl-4 p-sm-4">
+    <img src="/img/sponsors/sponsor-6.png" alt="">
+   </div>
+
+   <div class="card col-md-4 col-xl-4 p-sm-4">
+    <img src="/img/sponsors/sponsor-7.png" alt="">
+   </div>
+
+   <div class="card col-md-4 col-xl-3 p-sm-4">
+    <img src="/img/sponsors/sponsor-8.png" alt="">
+   </div>
+  </div>
+ </div>
+
+ <!-- Faq with collapse container  -->
+ <div class="faq container mt-5">
+  <h3 class="font-weight-bolder">F.A.Q</h3>
+
+  <hr class="center-mark">
+
+  <div class="container faq-container">
+   <a href="#data-1" data-toggle="collapse" class="active" onclick="changeSign(1)" style="color:white">
+    Non consectetur a erat nam at lectus urna duis?
+    <span class="fas fa-plus-square" id="minus-1"></span>
+    <!-- fa fa-minus-square -->
+   </a>
+
+   <div id="data-1" class="collapse container ">
+    Feugiat pretium nibh ipsum consequat. Tempus iaculis urna id volutpat lacus laoreet non curabitur gravida. Venenatis
+    lectus magna fringilla urna porttitor rhoncus dolor purus non.lsjf
+   </div>
+
+   <hr>
+
+   <a href="#data-2" data-toggle="collapse" onclick="changeSign(2)">
+    Feugiat scelerisque varius mobvi enum nunc faucibus a pellentesqud?
+    <span class="fas fa-plus-square" id="minus-2"></span>
+   </a>
+
+   <div id="data-2" class="collapse container">
+    Dolor sit amet consectetur adipiscing elit pellentesque habitant morbi. Id interdum velit laoreet id donec ultrices.
+    Fringilla phasellus faucibus scelerisque eleifend donec pretium. Est pellentesque elit ullamcorper dignissim. Mauris
+    ultrices eros in cursus turpis massa tincidunt dui.
+   </div>
+
+   <hr>
+
+   <a href="#data-3" data-toggle="collapse" onclick="changeSign(3)">
+    Dolor sit amet consectetur adipiscing elit pellentesque habitant morbi?
+    <span class="fas fa-plus-square" id="minus-3"></span>
+   </a>
+
+   <div id="data-3" class="collapse container">
+    Eleifend mi in nulla posuere sollicitudin aliquam ultrices sagittis orci. Faucibus pulvinar elementum integer enim.
+    Sem
+    nulla pharetra diam sit amet nisl suscipit. Rutrum tellus pellentesque eu tincidunt. Lectus urna duis convallis
+    convallis tellus. Urna molestie at elementum eu facilisis sed odio morbi quis
+   </div>
+
+   <hr>
+
+   <a href="#data-4" data-toggle="collapse" onclick="changeSign(4)">
+    Ac odio tempor orci adpibux. Aliquam eleifend mi in null ?
+    <span class="fas fa-plus-square" id="minus-4"></span>
+   </a>
+
+   <div id="data-4" class="collapse container">
+    Dolor sit amet consectetur adipiscing elit pellentesque habitant morbi. Id interdum velit laoreet id donec ultrices.
+    Fringilla phasellus faucibus scelerisque eleifend donec pretium. Est pellentesque elit ullamcorper dignissim. Mauris
+    ultrices eros in cursus turpis massa tincidunt dui.
+   </div>
+
+   <hr>
+
+   <a href="#data-5" data-toggle="collapse" onclick="changeSign(5)">
+    Tempus quam pellentesque nec nam aliquam sem et tortor consequat?
+    <span class="fas fa-plus-square" id="minus-5"></span>
+   </a>
+
+   <div id="data-5" class="container collapse">
+    Molestie a iaculis at erat pellentesque adipiscing commodo. Dignissim suspendisse in est ante in. Nunc vel risus
+    commodo
+    viverra maecenas accumsan. Sit amet nisl suscipit adipiscing bibendum est. Purus gravida quis blandit turpis cursus
+    in
+   </div>
+
+   <button class="btn btn-dark">More info</button>
+   <hr>
+  </div>
+
+ </div>
+
+ <!-- newsletter section with fixed background  -->
+ <div class="newsletter container-fluid">
+  <h3 class="font-weight-bolder">NEWSLETTER</h3>
+  <p>Rerum numquam illum recusandae quia mollitia consequatur.</p>
+  <hr>
+
+  <div class="subscribe">
+   <input type="email" name="email" id="in" class="rounded-pill" placeholder="Enter your Email ">
+   <button type="submit" class="btn btn-danger rounded-pill">Subscribe</button>
+  </div>
+ </div>
+
+
+ <!-- Buy tickets section with three columns  -->
+ <a name="tickets"></a>
+ <div class="tickets mt-5 container">
+  <h3 class="font-weight-bolder">BUY TICKETS</h3>
+  <p class="text-secondary text-center">Velit consequatur consequatur inventore iste fugit unde omnis eum aut.</p>
+
+  <hr class="center-mark">
+
+  <div class="ticket-container row">
+   <div class="card container  col-lg-3 col-sm-12 mt-2">
+    <div class="card-header">
+     <h6 class="text-secondary">STANDARD ACCESS</h6>
+     <p>$150</p>
+    </div>    <div class="card-body">
+     <p><span class="fa fa-check"></span> Regular Seating</p>
+     <p><span class="fa fa-check"></span> Coffee Break</p>
+     <p><span class="fa fa-check"></span> Custom Badge</p>
+     <p class="text-secondary"><span class="fa fa-times "></span> Community Access</p>
+     <p class="text-secondary"><span class="fa fa-times "></span> Workshop Access</p>
+     <p class="text-secondary"><span class="fa fa-times "></span> After Party</p>
+    </div>
+    <div class="card-footer">
+     <button class="btn btn-danger rounded-pill">Buy Now</button>
+    </div>
+   </div>
+
+   <div class="card container col-md-12 col-lg-4 col-sm-12 mt-2">
+    <div class="card-header">
+     <h6 class="text-secondary">PRO ACCESS</h6>
+     <p>$250</p>
+    </div>
+    <div class="card-body">
+     <p><span class="fa fa-check"></span> Regular Seating</p>
+     <p><span class="fa fa-check"></span> Coffee Break</p>
+     <p><span class="fa fa-check"></span> Custom Badge</p>
+     <p><span class="fa fa-check"></span> Community Access</p>
+     <p class="text-secondary"><span class="fa fa-times text-secondary"></span> Workshop Access</p>
+     <p class="text-secondary"><span class="fa fa-times text-secondary"></span> After Party</p>
+    </div>
+    <div class="card-footer">
+     <button class="btn btn-danger rounded-pill">Buy Now</button>
+    </div>
+   </div>
+
+   <div class="card container col-md-12 col-lg-4 col-sm-12 mt-2">
+    <div class="card-header">
+     <h6>PREMIUM ACCESS</h6>
+     <p>$350</p>
+    </div>
+    <div class="card-body">
+     <p><span class="fa fa-check"></span> Regular Seating</p>
+     <p><span class="fa fa-check"></span> Coffee Break</p>
+     <p><span class="fa fa-check"></span> Custom Badge</p>
+     <p><span class="fa fa-check"></span> Community Access</p>
+     <p><span class="fa fa-check"></span> Workshop Access</p>
+     <p><span class="fa fa-check"></span> After Party</p>
+    </div>
+    <div class="card-footer">
+     <button class="btn btn-danger rounded-pill">Buy Now</button>
+    </div>
+   </div>
+  </div>
+ </div>
+
+
+ <!-- Contact section with three column section  -->
+ <a name="contact"></a>
+ <div class="contact mt-5 container">
+  <h3 class="font-weight-bolder">CONTACT US</h3>
+  <p class="text-secondary">Nihil officia ut sint molestiae tenetur.</p>
+
+  <hr class="center-mark">
+
+  <div class="contact-info row">
+   <div class="col-md-4 col-sm-12">
+    <h3 class="font-weight-bolder">ADDRESS</h3>
+    <p class="text-info">370/14, Porba Vaddo, Harishi Beach, <br> Calangute, Bardez Goa 403 516 <br>
+     India</p>
+   </div>
+
+   <div class="col-md-4 col-sm-12">
+    <h3 class="font-weight-bolder">PHONE NUMBER</h3>
+    <p class="text-info">+1 5589 55488 55</p>
+   </div>
+
+   <div class="col-md-4 col-sm-12">
+    <h3 class="font-weight-bolder">EMAIL</h3>
+    <a href="#" class="text-info">reservations@hrhgoa.com</a>
+   </div>
+  </div>
+
+  <div class="form">
+   <input type="text" name="FirstName" id="FirstName" placeholder="Your Name">
+   <input type="text" name="SecondName" id="SecondName" placeholder="Your Email">
+   <input type="text" name="Subject" id="Subject" placeholder="Subject">
+   <textarea name="message" id="" cols="30" rows="5" placeholder="Message"></textarea>
+   <button type="submit" class="btn btn-danger rounded-pill">Send Message</button>
+  </div>
+ </div>
+
+ <!-- contact us section  -->
+ <a name="about"></a>
+ <div class="mt-5 contact-us row col-md-12 col-lg-12 col-sm-12">
+
+  <div class="contact-us-info head container col-sm-12 col-md-4 col-lg-4">
+   <h3 style="font-size: 2.3em;"><span class="fas fa-location-arrow"></span>The<span class="text-danger">Event</span>
+   </h3>
+   <p>In alias aperiam. Placeat tempore facere. Officiis voluptate ipsam vel eveniet est dolor et totam porro.
+    Perspiciatis
+    ad
+    omnis fugit molestiae recusandae possimus. Aut consectetur id quis. In inventore consequatur ad voluptate cupiditate
+    debitis accusamus repellat cumque.</p>
+  </div>
+
+  <div class="contact-us-info col-sm-12 col-md-4 col-lg-4 contact-us-links">
+   <h3 class="font-weight-bolder">USEFUL LINKS</h3>
+   <hr class="hr-full-width">
+   <a href="/">
+    <span class="fa fa-chevron-right"></span>Home
+   </a>
+   <hr class="hr-full-grey">
+   <a href="#">
+    <span class="fa fa-chevron-right"></span>About us
+   </a>
+   <hr class="hr-full-grey">
+   <a href="#">
+    <span class="fa fa-chevron-right"></span>Service
+   </a>
+   <a href="#">
+    <hr class="hr-full-grey">
+    <span class="fa fa-chevron-right"></span>Terms of service
+   </a>
+   <hr class="hr-full-grey">
+   <a href="#">
+    <span class="fa fa-chevron-right"></span>Privacy policy
+   </a>
+   <hr class="hr-full-grey">
+  </div>
+
+  <div class="contact-us-info-1 contact-us-info col-sm-12 col-md-4 col-lg-4">
+   <h3 class="font-weight-bolder">CONTACT US</h3>
+   <hr class="hr-full-width">
+   <p>370/14, Porba Vaddo,
+    Harishi Beach, <br> Calangute, Bardez <br>
+    Goa 403 516 <br>
+    India
+    <strong>Phone:</strong> +1 5589 55488 55 <br>
+    <strong>Email:</strong> reservations@hrhgoa.com</p>
+
+
+   <div class="contact-us-icons">
+    <a href="#"><i class="fab fa-instagram"></i></a>
+    <a href="#"><i class="fab fa-facebook-square"></i></a>
+    <a href="#"><i class="fab fa-google-plus-g"></i></a>
+    <a href="#"><i class="fab fa-linkedin"></i></a>
+   </div>
+  </div>
+
+
+ </div>
+
+ <footer class="footer-last">
+  <p>&copy;Copyright<strong>
+    aubitalumni.com</strong>. All Rights Reserved <br> Designed by <span class="text-danger">Our Team</span></p>
+ </footer>
+
+</body>
+
+</html>

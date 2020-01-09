@@ -69,17 +69,26 @@ app.post("/filter-data", (req, res) => {
   filter.filterDataFromCollege(req.body.Cname, res);
 }); 
 
-
 // Route for Alumni Sign In GET 
 app.get('/alumni_sign_in', (req, res) => {
   res.render('alumniSignIn');
 });
 
+// Route for Alumni Sign In GET 
+app.post('/alumni_sign_in', (req, res) => {
+
+  console.log(req.body);
+  loginVerify.checkAlumniLogin(req,res);
+});
+
 
 // Route for Alumni Sign Up GET 
 app.get("/alumni_sign_up", (req, res) => {
-
   res.render('alumniSignUp');
+});
+
+app.get('/alumni_control_panel',(req,res) => {
+    filter.filterDataFromCollege(req.query.Cname, res);
 });
 
 // Route for Alumni Sign Up POST 
@@ -92,12 +101,15 @@ app.get('/alumniContactProfile', (req,res) => {
 });
 
 
-
 app.post('/aboutForAlumni', (req, res) => {
-
   findDataInAlumniDB.findAlumniInfo(req,res);
 });
 
+
+// Event template GET
+app.get('/events', (req,res) => {
+  res.render('eventTemplate');
+});
 
 // Create server listen port: 4000
 app.listen(process.env.PORT || 4000, () => {
