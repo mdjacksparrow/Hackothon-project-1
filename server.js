@@ -63,19 +63,10 @@ app.get('/directorate_control_panel', (req,res) => {
 
 // Filter data for BIT calling request
 app.post("/filter-data", (req, res) => {
-  console.log();
+  console.log(req.body);
   
   filter.filterDataFromCollege(req.body.Cname, res);
 }); 
-
-// Filter data for CEG calling request
-app.get("/5e13751f2d47db0eb4f26659", (req, res) => {
-  filter.filterDataFromCollege(
-    "Anna University(CEG campus)",
-    res
-  );
-}); 
-
 
 
 // Route for Alumni Sign In GET 
@@ -95,8 +86,17 @@ app.post("/alumni_sign_up", (req, res) => {
   createOneDataInDb.createNewAlumni(req, res);
 });
 
+app.get('/alumniContactProfile', (req,res) => {
+  res.render('alumniContactProfile');
+});
+
+app.get("/aboutForAlumniProfile", (req, res) => {
+  res.render("aboutForAlumniProfile");
+});
+
 
 // Create server listen port: 4000
 app.listen(process.env.PORT || 4000, () => {
  console.log("Server running on port : 4000");
 })
+

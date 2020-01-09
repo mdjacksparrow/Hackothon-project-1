@@ -1,9 +1,6 @@
 const mongoose = require('mongoose');
 const DB = require('./user_module');
 const dbConnection = require('../dbWork/dbConnection');
-var path = require("path");
-
-var appDir = path.dirname(require.main.filename);
 
 // FROM Directorate 
 exports.filterDataFromCollege = function(collegeName,res) {

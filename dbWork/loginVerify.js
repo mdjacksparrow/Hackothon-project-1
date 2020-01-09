@@ -2,7 +2,6 @@ const mongoose = require("mongoose");
 const DB = require("./user_module");
 const dbConnection = require("../dbWork/dbConnection");
 const url = require('url');
-const listComponents = require("../dbWork/listAllEmailInDB");
 
 // FROM Directorate login
 exports.checkDirectorateLogin = function(req, res) {
