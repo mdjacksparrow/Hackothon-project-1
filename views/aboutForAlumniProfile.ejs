@@ -40,15 +40,16 @@
       <li role="presentation"><a href="#">Events</a></li>
       <li role="presentation"><a href="/alumniContactProfile">Contact</a></li>
       
-      <form action="#" method="post">
-        <li role="presentation">
-          <!-- <input readonly type = "text" name="regNo" value = <%= register %>> -->
-        </li>
-        <li role="presentation">
-          <button type="submit">Update Details</button>
-        </li>
-      </form>
-
+      <li role="presentation">
+        <form action="/alumniUpdateForm" method="post">
+          <li role="presentation">
+            <button id="submit" type="submit">Update Details</button>
+          </li>
+          <li role="presentation">
+            <input id="showReg" readonly type="text" name="regNo" value=<%= register %>>
+          </li>
+        </form>
+      </li>
      </ul>
 
 

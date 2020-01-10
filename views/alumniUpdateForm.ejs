@@ -53,23 +53,22 @@
             </div>
             <div class="col-md-8 col-md-offset-2">
 
-              <form action="" method="post" role="form" class="contactForm">
-
+              <form action="/alumniUpdateInfo" method="post" role="form" class="contactForm">
 
                 <div class="form-group">
-                  <input type="text" class="form-control" name="firstName" id="email" value = "First Name" readonly />
+                  <input type="text" readonly class="form-control" value = <%= firstName %>  />
                 </div>
 
                 <div class="form-group">
-                  <input type="text" class="form-control"name="secondName" id="email" value = "Second Name" readonly/>
+                  <input type="text" readonly class="form-control"  value = <%= secondName %> />
                 </div>
 
                 <div class="form-group">
-                  <input type="email" class="form-control" name="email" id="email" placeholder="Update Your Email"/>
+                  <input type="email" class="form-control" name="regNo" readonly value=<%= regNo %> />
                 </div>
 
                 <div class="form-group">
-                  <input type="text" class="form-control" name="regNo" id="email" value="Register Number" readonly />
+                  <input type="email" class="form-control" name="email"  placeholder="Update Your Email"/>
                 </div>
 
                 <div class="form-group">
@@ -77,15 +76,15 @@
                 </div>
 
                 <div class="form-group">
-                  <input type="text" class="form-control" name="ugCollegeName" value="College Name" readonly />
+                  <input type="text" readonly class="form-control"  value=<%= college %> />
                 </div>
 
                 <div class="form-group">
-                  <input type="text" class="form-control" name="ugYearOfPassing" value="Ug Year of Passing" readonly />
+                  <input type="text" readonly class="form-control" value=<%= ugYearOfPassing %> />
                 </div>
 
                 <div class="form-group">
-                  <input type="text" list="pg-course-name" class="form-control" name="pgCollegeName" placeholder="Update Your Pg course"/>
+                  <input type="text" list="pg-course-name" class="form-control" name="pgCourseName" placeholder="Update Your Pg course"/>
                 </div>
 
                 <datalist id="pg-course-name">
@@ -121,7 +120,7 @@
                 </div>
 
                 <div class="form-group">
-                  <input type="text" class="form-control" name="residence" value="Residence" readonly />
+                  <input type="text" readonly class="form-control"  value=<%= residence %>  />
                 </div>
 
                 <div class="form-group">
@@ -129,10 +128,12 @@
                 </div>
 
                 <div class="form-group">
-                  <input type="text" class="form-control" name="hometown" value="Home town" readonly/>
+                  <input type="text" readonly class="form-control"  value=<%= hometown %> />
                 </div>
 
-                <div class="text-center"><button type="submit" name="submit" class="btn btn-primary btn-lg" required="required">Update</button></div>
+                <div class="text-center">
+                  <button type="submit" class="btn btn-primary btn-lg">Update</button>
+                </div>
               </form>
 
             </div>
@@ -153,7 +154,6 @@
   <script type="text/javascript">
     $('#graphics').flipLightBox()
   </script>
-  <script src="/js/contactform.js"></script>
 
 </body>
 

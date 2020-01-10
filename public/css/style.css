@@ -274,21 +274,27 @@ textarea#message{
 #contact-page .contact-wrap {
   margin-top: 20px;
 }
-/* ul.social-network {
-	list-style:none;
-	margin-top:40px;
-	text-align:center;
-	font-size:30px;
-	margin-right:50px;
+
+#showReg{
+  outline: none;
+  border: none;
+  text-align: right;
 }
 
-ul.social-network li {
-	display:inline;
-	margin: 0 15px;
-	color:#6EE5A1;
+#submit{
+  position: absolute;
+  right: 0;
+  padding: 1rem;
+  border: none;
+  outline: none;
+  color: #000;
+  font-weight: 600;
+  text-transform: uppercase;
 }
-ul.social-network li a {	
-	color:#6EE5A1;
-	
-} */
+
+#submit:hover{
+  padding: 1rem;
+  color: #6EE5A1;
+  background-color: #eee;
+}
 

@@ -124,8 +124,17 @@ app.post('/aboutForAlumni', (req, res) => {
   findDataInAlumniDB.findAlumniInfo(req,res);
 });
 
-app.get('/alumniUpdateForm', (req,res) => {
-  res.render('alumniUpdateForm');
+// Show Alumni Update Form with Particular Info 
+app.post("/alumniUpdateForm", (req, res) => {
+  console.log(req.body);
+  
+  findDataInAlumniDB.findAlumniAndShowParticularInfo(req,res);
+});
+
+// Alumni Update Info Route 
+app.post('/alumniUpdateInfo',(req,res) => {
+  console.log(req.body);
+  findDataInAlumniDB.findAlumniAndUpdate(req,res);
 });
 
 
