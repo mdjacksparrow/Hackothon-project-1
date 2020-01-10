@@ -23,14 +23,14 @@ db.once("open", function() {
       console.log(docs);
 
       mongoose.connection.close();
-     console.log(docs.regNo);
+     console.log(docs[0].email);
      
      res.render("aboutForAlumniProfile", {
-       name: `${docs.firstName} ${docs.secondName}`,
-       city: docs.city,
-       email: docs.email,
-       phone: docs.phone,
-       register: docs.regNo
+       name: `${docs[0].firstName} ${docs[0].secondName}`,
+       city: docs[0].city,
+       email: docs[0].email,
+       phone: docs[0].phone,
+       register: alumniReg
      });
 
       console.log("DB connection lost!");
