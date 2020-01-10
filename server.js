@@ -137,10 +137,17 @@ app.post('/alumniUpdateInfo',(req,res) => {
   findDataInAlumniDB.findAlumniAndUpdate(req,res);
 });
 
-
 // Event template GET
 app.get('/events', (req,res) => {
-  res.render('eventTemplate');
+  checkDataInDB.checkEvents(res);
+});
+
+app.get("/eventHost", (req, res) => {
+  res.render("eventHost");
+});
+
+app.post("/eventHost", (req, res) => {
+  createOneDataInDb.createNewEvent(req,res);
 });
 
 // Create server listen port: 4000

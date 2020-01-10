@@ -74,3 +74,41 @@ db.once("open", function() {
   });
 });
 }
+
+
+
+// Check all events in events collection 
+exports.checkEvents = function(res) {
+
+//create connection 
+dbConnection.connect();
+
+var arrOfEvents = [];
+var db = mongoose.connection;
+
+db.on("error", console.error.bind(console, "connection error:"));
+db.once("open", function() {
+  // we're connected!
+  console.log("Connection Established !");
+
+  DB.Event.find({}, {}, (err, docs) => {
+    if (err) console.log(err);
+    else {
+      console.log(docs);
+      docs.forEach(event => {
+        arrOfEvents.push(event);
+      });
+      mongoose.connection.close();
+
+      var numberOfEvents = arrOfEvents.length;
+
+      res.render('eventTemplate' , {
+        ArrOfEvents: arrOfEvents,
+        NumberOfEvents: numberOfEvents
+      });
+
+      console.log("DB connection lost!");
+    }
+  });
+});
+}

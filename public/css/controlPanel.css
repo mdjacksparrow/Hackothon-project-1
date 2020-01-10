@@ -269,3 +269,32 @@ nav{
   font-size: 0.8rem;
   color: #aaa4a4;
 }
+
+#eventPostButton{
+  border-radius: 50%;
+  width: 45px;
+  height: 43px;
+  position: relative;
+  font-size: 1.3rem;
+  color: white;
+  background-color: #f66969;
+}
+
+#eventPostButton:hover{
+ background-color: #fa1f1f;
+}
+.eventLabel{
+  color: #212121;
+  padding: 0.5rem;
+  width: 90%;
+  text-transform: uppercase;
+  font-weight: 500;
+  background: linear-gradient(to right, #E0E0E0, #fffdf9)
+}
+
+.fa-plus{
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%,-50%);
+}

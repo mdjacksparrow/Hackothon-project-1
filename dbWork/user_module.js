@@ -73,7 +73,14 @@ var logindetailSchema = new Schema({
   password : String
 });
 
+var eventSchema = new Schema({
+  college: String,
+  title : String,
+  content: String,
+});
+
 exports.Alumni = mongoose.model("alumniDB", userSchema);
 exports.College = mongoose.model("collegeDB", collegeSchema);
 exports.Directorate = mongoose.model("directorate", directorateSchema);
 exports.loginDetail = mongoose.model("loginDetail", logindetailSchema)
+exports.Event = mongoose.model('event', eventSchema);

@@ -105,3 +105,38 @@ exports.createNewAlumni = function(req, res) {
     );
   });
 };
+
+
+
+//  CREATE SIGN UP FOR ALUMNI
+
+exports.createNewEvent = function(req, res) {
+  var data = req.body;
+  console.log(data);
+
+  // Create connection between server and DB
+  dbConnection.connect();
+
+  var db = mongoose.connection;
+
+  db.on("error", console.error.bind(console, "connection error:"));
+  db.once("open", function() {
+    // we're connected!
+    console.log(`Connection Established Between College ${dbConnection}`);
+
+    DB.Event.create(
+      {
+        college : req.body.collegeName,
+        title : req.body.eventTitle,
+        content : req.body.eventMessage
+      },
+      (err, docs) => {
+        if (err) console.log(err);
+        else {
+          console.log(docs);
+          res.sendFile(appDir + "/Success.html");
+        }
+      }
+    );
+  });
+};
