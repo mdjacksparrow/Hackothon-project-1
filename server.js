@@ -64,9 +64,27 @@ app.get('/directorate_control_panel', (req,res) => {
 
 // Filter data for BIT calling request
 app.post("/filter-data", (req, res) => {
+  filter.filterDataFromCollege(req.body.Cname, res);
+}); 
+
+app.post("/filter-data-by-regNo", (req, res) => {
   console.log(req.body);
   
-  filter.filterDataFromCollege(req.body.Cname, res);
+  filter.filterDataFromCollegeByRegNo(req.body.RegNo, res);
+}); 
+
+app.post("/filter-data-by-YearOfPassing", (req, res) => {
+  filter.filterDataFromCollegeByYearOfPassing(req.body.YearOfPassing, res);
+}); 
+
+app.post("/filter-data-by-City", (req, res) => {
+  filter.filterDataFromCollegeByCity(req.body.City, res);
+}); 
+
+app.post("/filter-data-by-Subject", (req, res) => {
+  console.log(req.body);
+  
+  filter.filterDataFromCollegeBySubject(req.body.Subject, res);
 }); 
 
 // Route for Alumni Sign In GET 
@@ -100,9 +118,14 @@ app.get('/alumniContactProfile', (req,res) => {
   res.render('alumniContactProfile');
 });
 
-
 app.post('/aboutForAlumni', (req, res) => {
+  console.log(req.body);
+  
   findDataInAlumniDB.findAlumniInfo(req,res);
+});
+
+app.get('/alumniUpdateForm', (req,res) => {
+  res.render('alumniUpdateForm');
 });
 
 

@@ -17,18 +17,20 @@ db.once("open", function() {
   // we're connected!
   console.log("Connection Established !");
 
-  DB.Alumni.findOne({regNo : alumniReg}, {}, (err, docs) => {
+  DB.Alumni.find({regNo : alumniReg},{}, (err, docs) => {
     if (err) console.log("error occured");
     else {
       console.log(docs);
 
       mongoose.connection.close();
+     console.log(docs.regNo);
      
      res.render("aboutForAlumniProfile", {
        name: `${docs.firstName} ${docs.secondName}`,
        city: docs.city,
        email: docs.email,
-       phone: docs.phone
+       phone: docs.phone,
+       register: docs.regNo
      });
 
       console.log("DB connection lost!");
@@ -61,7 +63,8 @@ exports.findAlumniInfoByEmail = function(alumniEmail, res) {
           name: `${docs.firstName} ${docs.secondName}`,
           city: docs.city,
           email: docs.email,
-          phone: docs.phone
+          phone: docs.phone,
+          register : docs.regNo
         });
 
         console.log("DB connection lost!");

@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Personal Bootstrap Template</title>
+
+  <!-- Bootstrap -->
+  <link href="/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="/css/font-awesome.min.css">
+  <link href="/css/overwrite.css" rel="stylesheet">
+  <link href="/css/style.css" rel="stylesheet">
+
+</head>
+
+<body>
+  <div class="row">
+    <div class="col-md-2">
+      <div class="menu">
+        <div class="logo">
+          <a href="/"><h1>PERSONAL</h1></a>
+        </div>
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="">
+						<span class="sr-only">Toggle navigation</span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+					</button>
+          <ul class="nav nav-pills nav-stacked">
+            <li role="presentation"><a href="/">Home</a></li>
+            <li role="presentation"><a href="#">Experience</a></li>
+          </ul>
+
+        </div>
+        <div class="footer">
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="">
+    <div class="">
+      <div class="col-md-6 col-md-push-2">
+        <section id="contact-page">
+          <div class="container">
+            <div class="center">
+              <h2>Update Form</h2>
+              <p class="lead">Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+            </div>
+            <div class="col-md-8 col-md-offset-2">
+
+              <form action="" method="post" role="form" class="contactForm">
+
+
+                <div class="form-group">
+                  <input type="text" class="form-control" name="firstName" id="email" value = "First Name" readonly />
+                </div>
+
+                <div class="form-group">
+                  <input type="text" class="form-control"name="secondName" id="email" value = "Second Name" readonly/>
+                </div>
+
+                <div class="form-group">
+                  <input type="email" class="form-control" name="email" id="email" placeholder="Update Your Email"/>
+                </div>
+
+                <div class="form-group">
+                  <input type="text" class="form-control" name="regNo" id="email" value="Register Number" readonly />
+                </div>
+
+                <div class="form-group">
+                  <input type="text" class="form-control" name="phoneNo" placeholder="Update Your Phone No +91"/>
+                </div>
+
+                <div class="form-group">
+                  <input type="text" class="form-control" name="ugCollegeName" value="College Name" readonly />
+                </div>
+
+                <div class="form-group">
+                  <input type="text" class="form-control" name="ugYearOfPassing" value="Ug Year of Passing" readonly />
+                </div>
+
+                <div class="form-group">
+                  <input type="text" list="pg-course-name" class="form-control" name="pgCollegeName" placeholder="Update Your Pg course"/>
+                </div>
+
+                <datalist id="pg-course-name">
+                    <option value="M.E.Computer Science And Engineering"></option>
+                    <option value="M.E.Civil Engineering"></option>
+                    <option value="M.E.Electrical And Electronic Engineering"></option>
+                    <option value="M.E.Mechanical Engineering"></option>
+                    <option value="M.E.Information Technology"></option>
+                    <option value="M.E.Aeronautical Engineering"></option>
+                    <option value="M.E.Electronics and Communication Engineering"></option>
+                    <option value="M.E.Electronics and Instrumentation Engineering"></option>
+                    <option value="M.E.Mechatronics Engineering"></option>
+                    <option value="M.E.Automobile Engineering"></option>
+                    <option value="M.E.Chemical Engineering"></option>
+                    <option value="M.E.Biotechnology"></option>
+                    <option value="M.E.Biomedical Engineering"></option>
+                </datalist>                 
+
+                <div class="form-group">
+                  <input type="text" class="form-control" name="pgYearOfPassing" placeholder="Update Your Pg Completion Year" />
+                </div>
+
+                <div class="form-group">
+                  <input type="text" class="form-control" name="research" placeholder="Update Your Research"  />
+                </div>
+                
+                <div class="form-group">
+                  <input type="text" class="form-control" name="designation" placeholder="Update Your Designation"/>
+                </div>
+
+                <div class="form-group">
+                  <input type="text" class="form-control" name="workingCompany" placeholder="Update Your Working Company"/>
+                </div>
+
+                <div class="form-group">
+                  <input type="text" class="form-control" name="residence" value="Residence" readonly />
+                </div>
+
+                <div class="form-group">
+                  <input type="text" class="form-control" name="city" placeholder="Update Your City"  />
+                </div>
+
+                <div class="form-group">
+                  <input type="text" class="form-control" name="hometown" value="Home town" readonly/>
+                </div>
+
+                <div class="text-center"><button type="submit" name="submit" class="btn btn-primary btn-lg" required="required">Update</button></div>
+              </form>
+
+            </div>
+          </div>
+          <!--/.container-->
+        </section>
+        <!--/#contact-page-->
+      </div>
+    </div>
+  </div>
+
+
+
+  <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+  <!-- Include all compiled plugins (below), or include individual files as needed -->
+  <script type="text/javascript" src="/js/fliplightbox.min.js"></script>
+  <script type="text/javascript">
+    $('#graphics').flipLightBox()
+  </script>
+  <script src="/js/contactform.js"></script>
+
+</body>
+
+</html>

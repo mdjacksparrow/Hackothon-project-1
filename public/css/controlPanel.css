@@ -78,6 +78,7 @@ nav{
 .sidebar .first-search-field{
  display: flex;
  align-items: center;
+ padding-top: 0.4rem;
 }
 
 .sidebar .search-field{
@@ -88,14 +89,26 @@ nav{
 .sidebar .first-search-field .top-search{
  background-color: #E0E0E0;
  border: none;
+ outline: none;
  width: 100%;
- height: 48px;
+ height: 50px;
+ margin-left: 5px;
+ /* margin: 4px 0 10px 15px; */
 }
 
 .top-search::placeholder{
  font-style: italic;
  font-size: 1rem;
  padding-left: 3px;
+}
+
+.sidebar .first-search-field .fa-search{
+ /* width: 100%; */
+ background-color: #F7A90C;
+ color: white;
+ /* font-size: 0.8rem; */
+ height: 100%;
+ padding: 1rem;
 }
 
 .sidebar .search-field{
@@ -155,6 +168,7 @@ nav{
  cursor: text;
  padding: 10px 10px 20px 20px;
  display: block;
+ /* margin-top:10px ; */
 }
 
 .sidebar .search-field input[type = "text"]::placeholder{
@@ -192,7 +206,6 @@ nav{
  margin-top: 1rem;
  display: flex;
  height: 100px;
- /* width: 500px; */
  position: relative;
 }
 
@@ -205,7 +218,7 @@ nav{
 
 .main .member .member-detail{
  padding: 1rem 1rem;
- width: 500px;
+ width: 400px;
 }
 
 .main .member .member-detail  p{
@@ -229,24 +242,6 @@ nav{
  font-size: 14px;
 }
 
-.sidebar .first-search-field .fa-search{
- background-color: #F7A90C;
- color: white;
- font-size: 0.8rem;
- height: 100%;
- padding: 1rem;
-}
-
-button[type = "submit"]{
-  background: none;
-  z-index: 99;
-  border: none;
-  outline: none;
-}
-
-.sidebar .first-search-field{
-  padding: 0;
-}
 
 .main .member button{
   background: none;
@@ -254,7 +249,7 @@ button[type = "submit"]{
   border: none;
   outline: none;
   right: 20px;
-  top: 0.8rem;
+  top: 1rem;
   /* margin: 0.5rem; */
   padding: 0.3rem 0.4rem;
   cursor: pointer;

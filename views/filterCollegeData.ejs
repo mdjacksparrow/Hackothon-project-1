@@ -1,253 +1,114 @@
-<%- include('header') -%>
+<!DOCTYPE html>
+<html lang="en">
 
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Dash Board</title>
+
+  <!-- Bootstrap CDN  -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+  <script src="https://kit.fontawesome.com/e2169f0192.js" crossorigin="anonymous"></script>
+
+  <!-- Local stylesheet link  -->
+  <link rel="stylesheet" href="/css/controlPanel.css">
+
+  <!-- Fotorama -->
+  <link href="/plugin/fotorama-4.6.2/fotorama.css" rel="stylesheet">
+  <script src="/plugin/fotorama-4.6.2/fotorama.js"></script>
+
+</head>
+
+<body>
 <%- include('navbar') -%>
 
 <div class="container-box container-fluid">
 
  <!-- Side Section  -->
- <div class="sidebar container p-3">
+<div class="sidebar container p-3">
 
   <h3>Keyword</h3>
 
-  <div class="first-search-field">
-   <input type="text" placeholder="Enter keyword" class="top-search">
-   <span class="fa fa-search"></span>
-  </div>
+  <form action="#" method="POST">
+    <div class="first-search-field">
+      <input type="text" name="Keyword" class="top-search" required placeholder="Enter Keyword" autocomplete="off">
+      <button type="submit"><span class="fa fa-search"></span></button>
+    </div>
+  </form>
 
   <h3>Filters</h3>
 
-  <div class="search-field">
-   <p class="choose">Search for</p>
+  <form action="/filter-data" method="POST">
+    <div class="first-search-field">
+      <input type="text" list="college-name" name="Cname" id="ug-college-name" class="top-search" required
+        placeholder="College Name">
+      <button type="submit"><span class="fa fa-search"></span></button>
 
-   <div class="show">
-    <select name="option">
-     <option value="Search for">Search for</option>
-     <option value="Admin">Admin</option>
-     <option value="Alumni">Alumni</option>
-     <option value="Faculty">Faculty</option>
-     <option value="Student">Student</option>
-    </select>
-   </div>
-  </div>
+      <datalist id="college-name">
+        <option value="University_College_of_Engineering(BIT_campus)"></option>
+        <option value="Anna_University(CEG_campus)"></option>
+      </datalist>
+    </div>
+  </form>
 
-  <div class="search-field">
-   <p class="choose">Year of Graduation</p>
-
-   <div class="show">
-
-    <div class="boxes">
-     <input type="checkbox" name="year2017"> <label>2017</label><span class="count">46</span>
+  <!-- Based On subject  -->
+  <form action="/filter-data-by-Subject" method="POST">
+    <div class="first-search-field">
+      <input type="text" list="subject-name" name="Subject" class="top-search" required placeholder="Subject Name" autocomplete="off">
+      <button type="submit"><span class="fa fa-search"></span></button>
     </div>
 
-    <div class="boxes">
-     <input type="checkbox" name="year2018"><label>2018</label> <span class="count">26</span>
+      <datalist id="subject-name">
+        <option value="B.E.Computer_Science_And_Engineering"></option>
+        <option value="B.E.Civil_Engineering"></option>
+        <option value="B.E.Electrical_And_Electronic_Engineering"></option>
+        <option value="B.E.Mechanical_Engineering"></option>
+        <option value="B.E.Information_Technology"></option>
+        <option value="B.E.Aeronautical_Engineering"></option>
+        <option value="B.E.Electronics_and_Communication_Engineering"></option>
+        <option value="B.E.Electronics_and_Instrumentation_Engineering"></option>
+        <option value="B.E.Mechatronics_Engineering"></option>
+        <option value="B.E.Automobile_Engineering"></option>
+        <option value="B.E.Chemical_Engineering"></option>
+        <option value="B.E.Biotechnology"></option>
+        <option value="B.E.Biomedical_Engineering"></option>
+      </datalist>
+  </form>
+
+  <!-- Based on regno  -->
+  <form action="/filter-data-by-regNo" method="POST">
+    <div class="first-search-field">
+      <input type="text" name="RegNo" class="top-search" required
+        placeholder="Reg No" autocomplete="off">
+      <button type="submit"><span class="fa fa-search"></span></button>
     </div>
+  </form>
 
-    <div class="boxes">
-     <input type="checkbox" name="year2019"><label>2019</label> <span class="count">134</span>
+ <!-- Based on year of passing  -->
+  <form action="/filter-data-by-YearOfPassing" method="POST">
+    <div class="first-search-field">
+      <input type="text" name="YearOfPassing" class="top-search" required placeholder="Year Of Passing" autocomplete="off">
+      <button type="submit"><span class="fa fa-search"></span></button>
     </div>
+  </form>
 
-    <select name="option">
-     <option value="Search for">Search for</option>
-     <option value="Admin">Admin</option>
-     <option value="Alumni">Alumni</option>
-     <option value="Faculty">Faculty</option>
-     <option value="Student">Student</option>
-    </select>
-   </div>
-
-  </div>
-
-
-  <div class="search-field">
-   <p class="choose">Division/Department</p>
-
-   <div class="show">
-
-    <div class="boxes">
-     <input type="checkbox" name="geology">Geology <span class="count">46</span>
+  <!-- Based on city  -->
+  <form action="/filter-data-by-City" method="POST">
+    <div class="first-search-field">
+      <input type="text" name="City" class="top-search" required placeholder="City Name" autocomplete="off">
+      <button type="submit"><span class="fa fa-search"></span></button>
     </div>
-
-    <div class="boxes">
-     <input type="checkbox" name="Mathematics">Mathematics <span class="count">26</span>
-    </div>
-
-    <div class="boxes">
-     <input type="checkbox" name="Computer Science">Computer Science <span class="count">134</span>
-    </div>
-
-    <div class="boxes">
-     <input type="checkbox" name="Commerce">Commerce <span class="count">134</span>
-    </div>
-
-    <select name="option">
-     <option value="Search for">Search for</option>
-     <option value="Admin">Admin</option>
-     <option value="Alumni">Alumni</option>
-     <option value="Faculty">Faculty</option>
-     <option value="Student">Student</option>
-    </select>
-   </div>
-
-  </div>
-
-  <div class="search-field">
-   <p class="choose">Degree</p>
-
-   <div class="show">
-    <div class="boxes">
-     <input type="checkbox" name="geology">B.C.A <span class="count">46</span>
-    </div>
-
-    <div class="boxes">
-     <input type="checkbox" name="Mathematics"> B.A<span class="count">26</span>
-    </div>
-
-    <div class="boxes">
-     <input type="checkbox" name="Computer Science">Computer Science <span class="count">134</span>
-    </div>
-
-    <div class="boxes">
-     <input type="checkbox" name="Commerce">Commerce <span class="count">134</span>
-    </div>
-
-    <select name="option">
-     <option value="Search for">Search for</option>
-     <option value="Admin">Admin</option>
-     <option value="Alumni">Alumni</option>
-     <option value="Faculty">Faculty</option>
-     <option value="Student">Student</option>
-    </select>
-   </div>
-
-  </div>
-
-  <div class="search-field">
-   <p class="choose">Home Town</p>
-
-   <div class="show">
-    <div class="boxes">
-     <input type="checkbox" name="geology">Geology <span class="count">46</span>
-    </div>
-
-    <div class="boxes">
-     <input type="checkbox" name="Mathematics">Mathematics <span class="count">26</span>
-    </div>
-
-    <div class="boxes">
-     <input type="checkbox" name="Computer Science">Computer Science <span class="count">134</span>
-    </div>
-
-    <input type="text" placeholder="Location">
-
-   </div>
-
-  </div>
-
-  <div class="search-field">
-   <p class="choose">Company</p>
-
-   <div class="show">
-    <div class="boxes">
-     <input type="checkbox" name="geology">Geology <span class="count">46</span>
-    </div>
-
-    <div class="boxes">
-     <input type="checkbox" name="Mathematics">Mathematics <span class="count">26</span>
-    </div>
-
-    <div class="boxes">
-     <input type="checkbox" name="Computer Science">Computer Science <span class="count">134</span>
-    </div>
-
-    <div class="boxes">
-     <input type="checkbox" name="Commerce">Commerce <span class="count">134</span>
-    </div>
-
-    <input type="text" placeholder="Company Name">
-
-   </div>
-
-  </div>
-
-  <div class="search-field">
-   <p class="choose">Designation</p>
-
-   <div class="show">
-    <div class="boxes">
-     <input type="checkbox" name="geology">Geology <span class="count">46</span>
-    </div>
-
-    <div class="boxes">
-     <input type="checkbox" name="Mathematics">Mathematics <span class="count">26</span>
-    </div>
-
-    <div class="boxes">
-     <input type="checkbox" name="Computer Science">Computer Science <span class="count">134</span>
-    </div>
-
-    <div class="boxes">
-     <input type="checkbox" name="Commerce">Commerce <span class="count">134</span>
-    </div>
-    <input type="text" placeholder="Search Designation">
-
-   </div>
-
-  </div>
-
-  <div class="search-field">
-   <p class="choose">Work Industry</p>
-
-   <div class="show">
-    <div class="boxes">
-     <input type="checkbox" name="geology">Geology <span class="count">46</span>
-    </div>
-
-    <div class="boxes">
-     <input type="checkbox" name="Mathematics">Mathematics <span class="count">26</span>
-    </div>
-
-    <div class="boxes">
-     <input type="checkbox" name="Computer Science">Computer Science <span class="count">134</span>
-    </div>
-
-    <div class="boxes">
-     <input type="checkbox" name="Commerce">Commerce <span class="count">134</span>
-    </div>
-
-    <input type="text" placeholder="Search Work Industry">
-
-   </div>
-
-  </div>
-
-  <div class="search-field">
-   <p class="choose">Skill</p>
-
-   <div class="show">
-    <div class="boxes">
-     <input type="checkbox" name="geology">Geology <span class="count">46</span>
-    </div>
-
-    <div class="boxes">
-     <input type="checkbox" name="Mathematics">Mathematics <span class="count">26</span>
-    </div>
-
-    <div class="boxes">
-     <input type="checkbox" name="Computer Science">Computer Science <span class="count">134</span>
-    </div>
-
-    <div class="boxes">
-     <input type="checkbox" name="Commerce">Commerce <span class="count">134</span>
-    </div>
-
-    <input type="text" placeholder="Search Skills">
-
-   </div>
-
-  </div>
-
- </div>
+</form>
+</div>
 
  <!-- Main section  -->
  <div class="main">
@@ -264,8 +125,8 @@
   <form action='/aboutForAlumni' method="post">
    <div class="member-detail">
      <a href="#" class="member-name"><%= ArrOfUser[i].firstName + " " + ArrOfUser[i].secondName %></a>
-     <input class="member-year" type="text" name="regNo" value= <%= ArrOfUser[i].regNo %> readonly>
-     <input class="member-home-town" type="text"  value= <%= ArrOfUser[i].ugYearOfPassing %> readonly>
+     <input  class="member-year" type="text" name="regNo" value= <%= ArrOfUser[i].regNo %> readonly>
+     <input style="width: 100%;" class="member-home-town" type="text"  value= <%= ArrOfUser[i].course %> readonly>
      <input class="member-degree" type="text"  value= <%= ArrOfUser[i].city %> readonly>
    </div>
      <button type="submit">View profile</button>
