@@ -208,8 +208,8 @@ db.once("open", function() {
           docs[0].save();
 
           // Return Indigation file 
-          res.sendFile(appDir + '/Success.html');
 
+          res.render('success');
            console.log("DB connection lost!");
          }
   });

@@ -35,7 +35,6 @@ db.once("open", function() {
     NumberOfMembers: numberOfAlumni
   });
 
-      // res.redirect(appDir + "/Success.html");
       console.log("filter end");
       console.log("DB connection lost!");
 
@@ -77,7 +76,6 @@ db.once("open", function() {
     NumberOfMembers: numberOfAlumni
   });
 
-      // res.redirect(appDir + "/Success.html");
       console.log("filter end");
       console.log("DB connection lost!");
 
@@ -120,7 +118,6 @@ db.once("open", function() {
     NumberOfMembers: numberOfAlumni
   });
 
-      // res.redirect(appDir + "/Success.html");
       console.log("filter end");
       console.log("DB connection lost!");
 
@@ -163,7 +160,6 @@ db.once("open", function() {
     NumberOfMembers: numberOfAlumni
   });
 
-      // res.redirect(appDir + "/Success.html");
       console.log("filter end");
       console.log("DB connection lost!");
 
@@ -206,7 +202,6 @@ db.once("open", function() {
     NumberOfMembers: numberOfAlumni
   });
 
-      // res.redirect(appDir + "/Success.html");
       console.log("filter end");
       console.log("DB connection lost!");
 

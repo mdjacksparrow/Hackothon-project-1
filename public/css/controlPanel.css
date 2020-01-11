@@ -87,7 +87,7 @@ nav{
 }
 
 .sidebar .first-search-field .top-search{
- background-color: #E0E0E0;
+ background: linear-gradient(to right, #E0E0E0, #fffdf9);
  border: none;
  outline: none;
  width: 100%;
@@ -103,12 +103,14 @@ nav{
 }
 
 .sidebar .first-search-field .fa-search{
- /* width: 100%; */
  background-color: #F7A90C;
  color: white;
- /* font-size: 0.8rem; */
  height: 100%;
  padding: 1rem;
+}
+
+.sidebar .first-search-field button{
+  border: none;
 }
 
 .sidebar .search-field{
@@ -147,7 +149,6 @@ nav{
  left: 10px;
  top: 5px;
  display: inline-block;
- /* padding: 10px; */
 }
 
 .sidebar .search-field .show label{

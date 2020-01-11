@@ -32,7 +32,7 @@ db.once("open", function() {
       if (err) console.log(err);
       else {
         console.log(docs);
-        res.sendFile(appDir + "/Success.html");
+        res.render('success');
       }
     }
   );
@@ -99,7 +99,7 @@ exports.createNewAlumni = function(req, res) {
         if (err) console.log(err);
         else {
           console.log(docs);
-          res.sendFile(appDir + "/Success.html");
+          res.render('success');
         }
       }
     );
@@ -134,7 +134,7 @@ exports.createNewEvent = function(req, res) {
         if (err) console.log(err);
         else {
           console.log(docs);
-          res.sendFile(appDir + "/Success.html");
+          res.render('success');
         }
       }
     );

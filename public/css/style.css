@@ -87,7 +87,7 @@ h1,h2,h3,h4,h5,h6 {
 	text-decoration:none;
 	list-style:none;
 	margin-left:20px;
-	margin-top:400px;
+	margin-top:450px;
 }
 .footer a {
 	color:#6EE5A1;
@@ -300,6 +300,7 @@ textarea#message{
 
 #eventPostButton{
   border-radius: 50%;
+  box-shadow: 2px 2px 4px rgba(255, 20, 20, 0.5);
   width: 45px;
   height: 43px;
   position: relative;
@@ -309,14 +310,14 @@ textarea#message{
 }
 
 #eventPostButton:hover{
- background-color: #fa1f1f;
+ background-color: rgb(250, 31, 31);
 }
 .eventLabel{
-  color: #212121;
+  color: #f66969;
   padding: 0.5rem;
   width: 90%;
   text-transform: uppercase;
-  font-weight: 500;
+  font-weight: 700;
   background: linear-gradient(to right, #E0E0E0, #fffdf9)
 }
 
@@ -325,4 +326,62 @@ textarea#message{
   left: 50%;
   top: 50%;
   transform: translate(-50%,-50%);
+}
+
+
+.chat{
+  position: absolute;
+  right: 1rem;
+  z-index: 99;
+}
+
+.chat button{
+  outline: none;
+  border: none;
+  z-index: 100;
+  background: #6EE5A1;
+}
+
+.chat .chat-btn{
+  position: absolute;
+  top: 2.5rem;
+
+  right: 1.5rem;
+  color: rgb(90, 88, 88);
+  padding: 1rem;
+  font-size: 1.2rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  width: 100px;
+  border-radius: 3px;
+}
+
+.chat .close-btn{
+  position: absolute;
+  top: 0.2rem;
+  border: none;
+  background: #fb5b5a;
+  right: 0.5rem;
+  color: rgb(90, 88, 88);
+  padding: 0.5rem 1rem 0.5rem 1rem;
+  font-size: 1.6rem;
+  color: white;
+  font-weight: 800;
+  display: none;
+  border-radius: 3px;
+}
+
+.chat .chat-btn:hover{
+  background: rgb(65, 243, 142);
+}
+
+.chat .close-btn:hover{
+  background: #ee2e2e;
+}
+
+iframe{
+  width: 300px;
+  position: relative;
+  height: 100vh;
+  display: none;
 }

@@ -150,6 +150,10 @@ app.post("/eventHost", (req, res) => {
   createOneDataInDb.createNewEvent(req,res);
 });
 
+app.get('/groupChat',(req,res) => {
+  res.render('groupChat');
+});
+
 // Create server listen port: 4000
 app.listen(process.env.PORT || 4000, () => {
  console.log("Server running on port : 4000");

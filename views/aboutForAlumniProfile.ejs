@@ -18,6 +18,17 @@
 </head>
 
 <body>
+
+<div class="chat">
+  <button class="chat-btn">Group Chat</button c>
+  <button class="close-btn">&times;</button>
+  <iframe frameborder="0" id="chatFrame" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"
+    allowtransparency="true"
+    src="https://chatroll.com/embed/chat/alumni-group-chat?id=XkA4yH0Dy6K&platform=html">
+  </iframe>
+</div>
+
+
  <div class="row">
   <div class="col-md-2">
    <div class="menu">
@@ -35,9 +46,7 @@
      </button>
      <ul class="nav nav-pills nav-stacked">
       <li role="presentation"><a href="/">Home</a></li>
-      <li role="presentation"><a href="#">Experience</a></li>
-      <li role="presentation"><a href="https://hangouts.google.com/group/JYSqJpHVomfyJNTt9">Group Chat</a></li>
-      <li role="presentation"><a href="#">Events</a></li>
+      <li role="presentation"><a href="/events">Events</a></li>
       <li role="presentation"><a href="/alumniContactProfile">Contact</a></li>
       
       <li role="presentation">
@@ -51,10 +60,8 @@
         </form>
       </li>
      </ul>
-
-
     </div>
-    <div class="footer">
+    <div class="footer pt-4">
      &copy; AUBIT All Right Reserved
     </div>
    </div>
@@ -103,7 +110,7 @@
   </div>
 
   <div class="col-md-6 col-md-push-2">
-   <img src="/img/5.jpg" alt="" class="img-responsive" />
+   <img src="/img/ico-3.jpg" alt="" class="img-responsive" />
   </div>
  </section>
 
@@ -115,7 +122,23 @@
  <script type="text/javascript">
   $('#graphics').flipLightBox()
  </script>
-
+ <script>
+    $(document).ready(
+      function(){
+        $('.chat-btn').click(function(){
+          $('#chatFrame').toggle("slide");
+          $(this).hide();
+          $('.close-btn').show();
+        });
+         $('.close-btn').click(function () {
+          $('#chatFrame').hide();
+          $(this).hide();
+          $('.chat-btn').show();
+        });
+      }
+    );
+  
+  </script>
 </body>
 
 </html>
