@@ -1,4 +1,4 @@
-// Requirement modules
+// Importing modules
 const express = require('express');
 const bodyParser = require('body-parser');
 const createOneDataInDb = require('./dbWork/createOneDataInDb');
@@ -10,7 +10,7 @@ const findDataInAlumniDB = require('./dbWork/findParticularDataInDB');
 // import express function 
 var app = express();
 
-// use modules
+// use express modules
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(express.static('public'));
 app.set("view engine", "ejs");
@@ -25,6 +25,7 @@ app.get('/college_sign_in', (req,res) => {
   res.render('college_sign_in');
 });
 
+// Route for college sign_in POST
 app.post('/college_sign_in', (req, res) => {
   loginVerify.checkCollegeLogin(req,res);
 })
@@ -41,9 +42,7 @@ app.post('/college_sign_up' , (req, res) => {
 
 // Route for College_control_panel GET
 app.get('/college_controlPanel', (req,res) => {
-
   filter.filterDataFromCollege(req.query.Cname, res);
-
 });
 
 // Route for Directorate sign in GET 
@@ -61,29 +60,28 @@ app.get('/directorate_control_panel', (req,res) => {
   checkDataInDB.checkDataFromDirectorate(res);
 });
 
-
 // Filter data for BIT calling request
 app.post("/filter-data", (req, res) => {
   filter.filterDataFromCollege(req.body.Cname, res);
 }); 
 
-app.post("/filter-data-by-regNo", (req, res) => {
-  console.log(req.body);
-  
+// Filter data based on Register Number  
+app.post("/filter-data-by-regNo", (req, res) => {  
   filter.filterDataFromCollegeByRegNo(req.body.RegNo, res);
-}); 
+});
 
+// Filter data based on Year Of Passing  
 app.post("/filter-data-by-YearOfPassing", (req, res) => {
   filter.filterDataFromCollegeByYearOfPassing(req.body.YearOfPassing, res);
 }); 
 
+// Filter data based on city  
 app.post("/filter-data-by-City", (req, res) => {
   filter.filterDataFromCollegeByCity(req.body.City, res);
 }); 
 
-app.post("/filter-data-by-Subject", (req, res) => {
-  console.log(req.body);
-  
+// Filter data based on Subject  
+app.post("/filter-data-by-Subject", (req, res) => {  
   filter.filterDataFromCollegeBySubject(req.body.Subject, res);
 }); 
 
@@ -92,21 +90,14 @@ app.get('/alumni_sign_in', (req, res) => {
   res.render('alumniSignIn');
 });
 
-// Route for Alumni Sign In GET 
+// Route for Alumni Sign In POST 
 app.post('/alumni_sign_in', (req, res) => {
-
-  console.log(req.body);
   loginVerify.checkAlumniLogin(req,res);
 });
-
 
 // Route for Alumni Sign Up GET 
 app.get("/alumni_sign_up", (req, res) => {
   res.render('alumniSignUp');
-});
-
-app.get('/alumni_control_panel',(req,res) => {
-    filter.filterDataFromCollege(req.query.Cname, res);
 });
 
 // Route for Alumni Sign Up POST 
@@ -114,42 +105,47 @@ app.post("/alumni_sign_up", (req, res) => {
   createOneDataInDb.createNewAlumni(req, res);
 });
 
+// Route for Alumni Control Panel GET 
+app.get('/alumni_control_panel',(req,res) => {
+    filter.filterDataFromCollege(req.query.Cname, res);
+});
+
+// Route for Alumni Contact Profile GET
 app.get('/alumniContactProfile', (req,res) => {
   res.render('alumniContactProfile');
 });
 
+// Route for aboutForAlumni POST 
 app.post('/aboutForAlumni', (req, res) => {
-  console.log(req.body);
-  
   findDataInAlumniDB.findAlumniInfo(req,res);
 });
 
-// Show Alumni Update Form with Particular Info 
-app.post("/alumniUpdateForm", (req, res) => {
-  console.log(req.body);
-  
+// Route Show Alumni Update Form with Particular Info POST
+app.post("/alumniUpdateForm", (req, res) => {  
   findDataInAlumniDB.findAlumniAndShowParticularInfo(req,res);
 });
 
-// Alumni Update Info Route 
+// Route Alumni Update Info Route POST
 app.post('/alumniUpdateInfo',(req,res) => {
-  console.log(req.body);
   findDataInAlumniDB.findAlumniAndUpdate(req,res);
 });
 
-// Event template GET
+// Route Event template GET
 app.get('/events', (req,res) => {
   checkDataInDB.checkEvents(res);
 });
 
+// Route for Event hosting GET
 app.get("/eventHost", (req, res) => {
   res.render("eventHost");
 });
 
+// Route for Event hosting POST 
 app.post("/eventHost", (req, res) => {
   createOneDataInDb.createNewEvent(req,res);
 });
 
+// Route for GroupChat GET 
 app.get('/groupChat',(req,res) => {
   res.render('groupChat');
 });

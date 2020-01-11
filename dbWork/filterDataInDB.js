@@ -2,10 +2,10 @@ const mongoose = require('mongoose');
 const DB = require('./user_module');
 const dbConnection = require('../dbWork/dbConnection');
 
-// FROM Directorate By using college name
+//  Directorate - search using college name 
 exports.filterDataFromCollege = function(collegeName,res) {
 
-//create connection 
+//Establishing connection 
 dbConnection.connect();
 
 var arrOfUser = [];
@@ -20,7 +20,6 @@ db.once("open", function() {
   DB.Alumni.find({ college : collegeName },'firstName secondName ugYearOfPassing city regNo course' , (err, docs) => {
     if (err) console.log(err);
     else {
-      // console.log(docs);
       docs.forEach(user => {
         arrOfUser.push(user);
       });
@@ -43,7 +42,7 @@ db.once("open", function() {
 });
 }
 
-// FROM Directorate By using Register number
+//  Directorate -Search by Register number
 exports.filterDataFromCollegeByRegNo = function(RegNo,res) {
 
 //create connection 
@@ -85,7 +84,7 @@ db.once("open", function() {
 }
 
 
-// FROM College By using Year Of Passing
+//  College-Search by  Year Of Passing
 exports.filterDataFromCollegeByYearOfPassing = function(YearOfPassing,res) {
 
 //create connection 
@@ -103,7 +102,6 @@ db.once("open", function() {
   DB.Alumni.find({ ugYearOfPassing : YearOfPassing },'firstName secondName ugYearOfPassing city regNo' , (err, docs) => {
     if (err) console.log(err);
     else {
-      // console.log(docs);
       docs.forEach(user => {
         arrOfUser.push(user);
       });
@@ -127,10 +125,10 @@ db.once("open", function() {
 }
 
 
-// FROM College By using Year Of Passing
+//  College-Search by Year Of Passing
 exports.filterDataFromCollegeByCity = function(City,res) {
 
-//create connection 
+//Establishing connection 
 dbConnection.connect();
 
 var arrOfUser = [];
@@ -145,7 +143,6 @@ db.once("open", function() {
   DB.Alumni.find({ city : City },'firstName secondName ugYearOfPassing city regNo' , (err, docs) => {
     if (err) console.log(err);
     else {
-      // console.log(docs);
       docs.forEach(user => {
         arrOfUser.push(user);
       });
@@ -169,10 +166,10 @@ db.once("open", function() {
 }
 
 
-// FROM College By using Subject
+// College-Search by Course
 exports.filterDataFromCollegeBySubject = function(Subject,res) {
 
-//create connection 
+//Establishing connection 
 dbConnection.connect();
 
 var arrOfUser = [];

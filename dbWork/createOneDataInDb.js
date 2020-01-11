@@ -6,7 +6,7 @@ var path = require("path");
 var appDir = path.dirname(require.main.filename);
 
 
-// SIGN UP FOR NEW COLLEGE 
+// Sign up for new College 
 exports.createNewCollege = function(req,res){
  
   var data = req.body;
@@ -55,13 +55,13 @@ db.once("open", function() {
 };
 
 
-// CREATE SIGN UP FOR ALUMNI
+// Create sign up for Alumni
 
 exports.createNewAlumni = function(req, res) {
   var data = req.body;
   console.log(data);
 
-  // Create connection between server and DB
+  // Establishing connection between server and DB
   dbConnection.connect();
 
   var db = mongoose.connection;
@@ -92,7 +92,7 @@ exports.createNewAlumni = function(req, res) {
         companyName: data.Working_company,
         residence: data.Country_of_residence,
         hometown: data.Home,
-        /*BUG later fixed */
+        //BUG later fixed 
         skills: data.skill
       },
       (err, docs) => {
@@ -108,13 +108,13 @@ exports.createNewAlumni = function(req, res) {
 
 
 
-//  CREATE SIGN UP FOR ALUMNI
+// Posting Event details
 
 exports.createNewEvent = function(req, res) {
   var data = req.body;
   console.log(data);
 
-  // Create connection between server and DB
+  // Establishing   connection between server and DB
   dbConnection.connect();
 
   var db = mongoose.connection;

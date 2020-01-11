@@ -2,7 +2,7 @@ const mongoose = require('mongoose');
 const DB = require('./user_module');
 const dbConnection = require('../dbWork/dbConnection');
 
-// FROM Directorate 
+// FROM Directorate Collections
 exports.checkDataFromDirectorate = function(res) {
 
 //create connection 
@@ -38,8 +38,7 @@ db.once("open", function() {
 });
 }
 
-
-// FROM College DB
+// FROM College DB Collections
 exports.checkDataFromCollege = function(res) {
 
 //create connection 
@@ -74,7 +73,6 @@ db.once("open", function() {
   });
 });
 }
-
 
 
 // Check all events in events collection 

@@ -5,10 +5,10 @@ var path = require("path");
 
 var appDir = path.dirname(require.main.filename);
 
-// FROM Alumni DB 
+// From Alumni DataBase
 exports.findAlumniInfo = function(req,res) {
 
-//create connection 
+//Establishing connection 
 dbConnection.connect();
 
 let alumniReg = req.body.regNo;
@@ -43,9 +43,9 @@ db.once("open", function() {
 }
 
 
-// Finding alumni By using EMAIL 
+//Search Alumni By Email
 exports.findAlumniInfoByEmail = function(alumniEmail, res) {
-  //create connection
+  //Establishing  connection
   dbConnection.connect();
 
   var db = mongoose.connection;
@@ -79,7 +79,7 @@ exports.findAlumniInfoByEmail = function(alumniEmail, res) {
 
 
 
-// Find alumni info by Reg for update profile form 
+// Search Alumni by Register for profile updation
 exports.findAlumniAndShowParticularInfo = function(req,res) {
 
 //create connection 
@@ -120,10 +120,10 @@ db.once("open", function() {
 }
 
 
-// Find alumni info by Reg and Update to DB
+// Search Alumni  by Register and Update to DataBase
 exports.findAlumniAndUpdate = function(req,res) {
 
-//create connection 
+//Establishing  connection 
 dbConnection.connect();
 
 let alumniReg = req.body.regNo;
@@ -140,7 +140,7 @@ db.once("open", function() {
     else {
            console.log(docs);
 
-           //Email
+           //Email updation
            if (req.body.email === "") {
              console.log("email empty");
            } else {
@@ -148,7 +148,7 @@ db.once("open", function() {
               console.log("email updated!");
            }
 
-           // phone no
+           // phone number updation
            if (req.body.phoneNo === "") {
              console.log("phoneNo empty");
            } else {
@@ -156,7 +156,7 @@ db.once("open", function() {
             console.log("phoneNo updated!");
           }
 
-           // pg College Name
+           // PG College Name updation
            if (req.body.pgCourseName === "") {
              console.log("pgCollegeName empty");
            } else {
@@ -164,7 +164,7 @@ db.once("open", function() {
             console.log("pgCourseName updated!");
            }
 
-           // pg Year of passing
+           // PG- Year of passing updation 
            if (req.body.pgYearOfPassing === "") {
              console.log("pgYearOfPassing empty");
            } else {
@@ -172,7 +172,7 @@ db.once("open", function() {
             console.log("pgYearOfPassing updated!");
            }
 
-           // Research Name
+           // Research Name updation 
            if (req.body.research === "") {
              console.log("research empty");
            } else {
@@ -180,7 +180,7 @@ db.once("open", function() {
             console.log("research updated!");
            }
 
-           // Designation Name
+           // Designation Name updation 
           if (req.body.designation === "") {
             console.log("designation empty");
           } else {
@@ -188,7 +188,7 @@ db.once("open", function() {
             console.log('designation updated!');
           }
 
-           // Working company Name
+           // Working company Name updation 
           if (req.body.workingCompany === "") {
             console.log("company name empty");
           } else {
@@ -196,7 +196,7 @@ db.once("open", function() {
             console.log("company updated!");
           }
 
-          // city Name
+          // city Name updation 
           if (req.body.city === "") {
             console.log("city empty");
           } else {
@@ -204,10 +204,10 @@ db.once("open", function() {
             console.log('city updated!');           
           }
 
-          // Save changes for made in the document 
+          // Save changes in the document 
           docs[0].save();
 
-          // Return Indigation file 
+          // Return Indication file 
 
           res.render('success');
            console.log("DB connection lost!");
