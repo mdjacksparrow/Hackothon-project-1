@@ -28,7 +28,7 @@ app.get('/college_sign_in', (req,res) => {
 // Route for college sign_in POST
 app.post('/college_sign_in', (req, res) => {
   loginVerify.checkCollegeLogin(req,res);
-})
+});
 
 // Route for college sign_up GET
 app.get("/college_sign_up", (req, res) => {
@@ -103,6 +103,7 @@ app.get("/alumni_sign_up", (req, res) => {
 // Route for Alumni Sign Up POST 
 app.post("/alumni_sign_up", (req, res) => {
   createOneDataInDb.createNewAlumni(req, res);
+  // filter.filterDataFromCollegeByRegNo(req.body.RegNo, res);
 });
 
 // Route for Alumni Control Panel GET 
@@ -148,6 +149,19 @@ app.post("/eventHost", (req, res) => {
 // Route for GroupChat GET 
 app.get('/groupChat',(req,res) => {
   res.render('groupChat');
+});
+
+
+
+// Route for posting mail to MailChimp GET
+app.get('/postToMailChimp',(req,res) => {
+  res.render('postToMailChimp');
+});
+
+// Route for posting mail to MailChimp POST
+app.post("/postToMailChimp", (req, res) => {
+
+
 });
 
 // Create server listen port: 4000
