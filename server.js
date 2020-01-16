@@ -1,3 +1,6 @@
+// Import dotenv file 
+require('dotenv').config();
+
 // Importing modules
 const express = require('express');
 const bodyParser = require('body-parser');
@@ -6,6 +9,12 @@ const checkDataInDB = require('./dbWork/checkDataInDB');
 const filter = require('./dbWork/filterDataInDB');
 const loginVerify = require('./dbWork/loginVerify');
 const findDataInAlumniDB = require('./dbWork/findParticularDataInDB');
+const alumniSignUpVerify = require('./errorHandle/alumniSignUpVerify')
+const passport = require("passport");
+const passportLocalMongoose = require("passport-local-mongoose");
+const session = require("express-session");
+const UserSchema = require('./dbWork/user_module');
+
 
 // import express function 
 var app = express();
@@ -14,6 +23,36 @@ var app = express();
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(express.static('public'));
 app.set("view engine", "ejs");
+
+// Session setup 
+app.use(session({
+ secret : process.env.SESSION_SECRET,
+ resave : false,
+ saveUninitialized : false
+}));
+
+// Configure passport middleware 
+app.use(passport.initialize());
+app.use(passport.session());
+
+// CHANGE: USE "createStrategy" INSTEAD OF "authenticate"
+passport.use(UserSchema.Alumni.createStrategy());
+passport.use(UserSchema.College.createStrategy());
+passport.use(UserSchema.Directorate.createStrategy());
+passport.use(UserSchema.Event.createStrategy());
+passport.use(UserSchema.loginDetail.createStrategy());
+
+passport.serializeUser(UserSchema.Alumni.serializeUser());
+passport.serializeUser(UserSchema.College.serializeUser());
+passport.serializeUser(UserSchema.Directorate.serializeUser());
+passport.serializeUser(UserSchema.Event.serializeUser());
+passport.serializeUser(UserSchema.loginDetail.serializeUser());
+
+passport.deserializeUser(UserSchema.Alumni.deserializeUser());
+passport.deserializeUser(UserSchema.College.deserializeUser());
+passport.deserializeUser(UserSchema.Directorate.deserializeUser());
+passport.deserializeUser(UserSchema.Event.deserializeUser());
+passport.deserializeUser(UserSchema.loginDetail.deserializeUser());
 
 // Route for root 
 app.get('/', (req,res) => {
@@ -102,8 +141,7 @@ app.get("/alumni_sign_up", (req, res) => {
 
 // Route for Alumni Sign Up POST 
 app.post("/alumni_sign_up", (req, res) => {
-  createOneDataInDb.createNewAlumni(req, res);
-  // filter.filterDataFromCollegeByRegNo(req.body.RegNo, res);
+  alumniSignUpVerify.filterDataFromCollegeByRegNo(req,res,req.body.regNo);
 });
 
 // Route for Alumni Control Panel GET 
@@ -151,17 +189,9 @@ app.get('/groupChat',(req,res) => {
   res.render('groupChat');
 });
 
-
-
 // Route for posting mail to MailChimp GET
 app.get('/postToMailChimp',(req,res) => {
   res.render('postToMailChimp');
-});
-
-// Route for posting mail to MailChimp POST
-app.post("/postToMailChimp", (req, res) => {
-
-
 });
 
 // Create server listen port: 4000

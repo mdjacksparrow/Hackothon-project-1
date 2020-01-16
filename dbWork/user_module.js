@@ -1,7 +1,8 @@
-var mongoose = require("mongoose");
-var Schema = mongoose.Schema;
+const mongoose = require("mongoose");
+const Schema = mongoose.Schema;
+const passportLocalMongoose = require('passport-local-mongoose');
 
-var directorateSchema = new Schema({
+const directorateSchema = new Schema({
   collegeName: {
     type: String,
     required: [true]
@@ -12,7 +13,10 @@ var directorateSchema = new Schema({
   }
 });
 
-var collegeSchema = new Schema({
+//////////////////////////////////////////////SETUP FOR LOCAL MONGOOSE PLUGIN FOR IMPLEMENTING HASH WITH SALTS ////////////////////////////////////////////////////////
+directorateSchema.plugin(passportLocalMongoose);
+
+const collegeSchema = new Schema({
   college: {
     type: String,
     required: [true]
@@ -27,7 +31,10 @@ var collegeSchema = new Schema({
   }
 });
 
-var userSchema = new Schema({
+//////////////////////////////////////////////SETUP FOR LOCAL MONGOOSE PLUGIN FOR IMPLEMENTING HASH WITH SALTS ////////////////////////////////////////////////////////
+collegeSchema.plugin(passportLocalMongoose);
+
+const userSchema = new Schema({
   username: {
     type: String,
     required: [true]
@@ -68,16 +75,26 @@ var userSchema = new Schema({
   skills: []
 });
 
-var logindetailSchema = new Schema({
+//////////////////////////////////////////////SETUP FOR LOCAL MONGOOSE PLUGIN FOR IMPLEMENTING HASH WITH SALTS ////////////////////////////////////////////////////////
+userSchema.plugin(passportLocalMongoose);
+
+
+const logindetailSchema = new Schema({
   username : String,
   password : String
 });
 
-var eventSchema = new Schema({
+//////////////////////////////////////////////SETUP FOR LOCAL MONGOOSE PLUGIN FOR IMPLEMENTING HASH WITH SALTS ////////////////////////////////////////////////////////
+logindetailSchema.plugin(passportLocalMongoose);
+
+const eventSchema = new Schema({
   college: String,
   title : String,
   content: String,
 });
+
+//////////////////////////////////////////////SETUP FOR LOCAL MONGOOSE PLUGIN FOR IMPLEMENTING HASH WITH SALTS ////////////////////////////////////////////////////////
+eventSchema.plugin(passportLocalMongoose);
 
 exports.Alumni = mongoose.model("alumnidb", userSchema);
 exports.College = mongoose.model("collegedb", collegeSchema);

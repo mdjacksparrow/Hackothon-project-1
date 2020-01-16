@@ -75,6 +75,9 @@
     <!-- <i class="fa fa-check" aria-hidden="true"></i> -->
     <i id="reg-num-check" class="indicator">&#33;</i>
    </div>
+   <div class="error-message text-danger" style="padding-left: 1rem; display: none;">
+    <p>Already Existed!</p> 
+    </div>
 
 
    <div class="inp">
@@ -211,6 +214,20 @@
  </form>
 
  <script src="/js/sign_up.js"></script>
+
+ <script>
+
+  $(document).ready(() => {
+
+    $('#phone').click(() => {
+      $.get('/alumni_sign_up', (data) => {
+        
+      });
+    });
+  });
+
+ </script>
+
 </body>
 
 <%- include('footer') -%>

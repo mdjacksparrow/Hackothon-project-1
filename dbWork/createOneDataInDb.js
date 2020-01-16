@@ -114,7 +114,7 @@ exports.createNewAlumni = function(req, res) {
   db.on("error", console.error.bind(console, "connection error:"));
   db.once("open", function() {
     // we're connected!
-    console.log(`Connection Established Between College ${dbConnection}`);
+    console.log(`Connection Established Between College DB`);
 
     DB.Alumni.create(
       {

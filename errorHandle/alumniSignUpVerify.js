@@ -1,13 +1,13 @@
 var mongoose = require("mongoose");
 var dbConnection = require("../dbWork/dbConnection.js");
 var DB = require("../dbWork/user_module");
+const createOneDataInDb = require("../dbWork/createOneDataInDb");
 
 //  Directorate -Search by Register number
-exports.filterDataFromCollegeByRegNo = function(RegNo, res) {
+exports.filterDataFromCollegeByRegNo = function(req,res,RegNo) {
   //create connection
   dbConnection.connect();
 
-  var arrOfUser = [];
   var db = mongoose.connection;
 
   db.on("error", console.error.bind(console, "connection error:"));
@@ -21,23 +21,16 @@ exports.filterDataFromCollegeByRegNo = function(RegNo, res) {
       (err, docs) => {
         if (err) console.log(err);
         else {
-          // console.log(docs);
-          docs.forEach(user => {
-            arrOfUser.push(user);
-          });
-          mongoose.connection.close();
+          console.log(docs);
 
-          console.log(arrOfUser);
-
-          var numberOfAlumni = arrOfUser.length;
-
-          res.render("filterCollegeData", {
-            ArrOfUser: arrOfUser,
-            NumberOfMembers: numberOfAlumni
-          });
-
-          console.log("filter end");
-          console.log("DB connection lost!");
+          if(docs[0] === undefined){
+            createOneDataInDb.createNewAlumni(req,res);
+          }else{
+            res.render('failure',
+            {
+              errorMessage : "Register Number Already Existed!"
+            });
+          }
         }
       }
     );
