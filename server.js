@@ -11,8 +11,8 @@ const loginVerify = require('./dbWork/loginVerify');
 const findDataInAlumniDB = require('./dbWork/findParticularDataInDB');
 const alumniSignUpVerify = require('./errorHandle/alumniSignUpVerify')
 const passport = require("passport");
-const passportLocalMongoose = require("passport-local-mongoose");
 const session = require("express-session");
+const dbConnection = require("./dbWork/dbConnection.js");
 const UserSchema = require('./dbWork/user_module');
 
 
@@ -36,36 +36,32 @@ app.use(passport.initialize());
 app.use(passport.session());
 
 // CHANGE: USE "createStrategy" INSTEAD OF "authenticate"
-passport.use(UserSchema.Alumni.createStrategy());
 passport.use(UserSchema.College.createStrategy());
-passport.use(UserSchema.Directorate.createStrategy());
-passport.use(UserSchema.Event.createStrategy());
-passport.use(UserSchema.loginDetail.createStrategy());
 
-passport.serializeUser(UserSchema.Alumni.serializeUser());
-passport.serializeUser(UserSchema.College.serializeUser());
-passport.serializeUser(UserSchema.Directorate.serializeUser());
-passport.serializeUser(UserSchema.Event.serializeUser());
-passport.serializeUser(UserSchema.loginDetail.serializeUser());
+passport.serializeUser(function(user, done) {
+  done(null, user.id);
+});
 
-passport.deserializeUser(UserSchema.Alumni.deserializeUser());
-passport.deserializeUser(UserSchema.College.deserializeUser());
-passport.deserializeUser(UserSchema.Directorate.deserializeUser());
-passport.deserializeUser(UserSchema.Event.deserializeUser());
-passport.deserializeUser(UserSchema.loginDetail.deserializeUser());
+passport.deserializeUser(function(id, done) {
+  UserSchema.College.findById(id, function(err, user) {
+    done(err, user);
+  });
+});
+dbConnection.connect();
+console.log("Connection established!");
 
 // Route for root 
 app.get('/', (req,res) => {
- res.render('index');
+  res.render('index');
 });
 
 // Route for college sign_in GET
-app.get('/college_sign_in', (req,res) => {
+app.get('/college-login', (req,res) => {
   res.render('college_sign_in');
 });
 
 // Route for college sign_in POST
-app.post('/college_sign_in', (req, res) => {
+app.post("/college-login", (req, res) => {
   loginVerify.checkCollegeLogin(req,res);
 });
 
@@ -80,8 +76,14 @@ app.post('/college_sign_up' , (req, res) => {
 });
 
 // Route for College_control_panel GET
-app.get('/college_controlPanel', (req,res) => {
-  filter.filterDataFromCollege(req.query.Cname, res);
+app.get('/college-control-panel', (req,res) => {
+  
+  if (req.isAuthenticated()) {
+    res.send("You are now in c panel");
+  } else {
+    res.redirect("/college-login");
+  }
+
 });
 
 // Route for Directorate sign in GET 

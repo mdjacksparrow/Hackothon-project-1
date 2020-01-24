@@ -1,114 +1,13 @@
 var mongoose = require('mongoose');
-var dbConnection = require('../dbWork/dbConnection.js');
-var DB = require('./user_module');
-var path = require("path");
-
-var appDir = path.dirname(require.main.filename);
-
-
-// Sign up for new College 
-exports.createNewCollege = function(req,res){
- 
-  var data = req.body;
-  console.log(req.body);
-  var collegeName = data.CollegeName;
-  var email = data.Email;
-    
-// Create connection between server and DB 
-dbConnection.connect();
-
-var db = mongoose.connection;
-
-db.on("error", console.error.bind(console, "connection error:"));
-db.once("open", function() {
-  // we're connected!
-  console.log(`Connection Established Between College`);
-
-  // Data inserted into collegedb collection 
-  DB.College.create(
-    {
-      college: data.CollegeName,
-      email: data.Email,
-      password: data.Password
-    },
-    (err, docs) => {
-      if (err) console.log(err);
-      else {
-        console.log(docs);
-        res.render('success');
-      }
-    }
-  );
-
-  // Data inserted into DirectorateDb by same registration details given by college registration
-  DB.Directorate.create(
-    {
-      collegeName : data.CollegeName,
-      email : data.Email
-    },
-    (err, docs) => {
-      if (err) console.log(err);
-      else {
-        console.log(docs);
-        mongoose.connection.close();
-        console.log("DB connection lost!");
-      }
-    }
-  );
-
-  // Also Sign to MailChimp API integration 
-//     var data = {
-//       members: [
-//         {
-//           email_address: email,
-//           status: "subscribed",
-//           merge_fields: {
-//             FNAME: CollgeName
-//           }
-//         }
-//       ]
-//     };
-
-//     var jsonData = JSON.stringify(data);
-
-//     var options = {
-//       url: "https://us4.api.mailchimp.com/3.0/lists/7dc64fbc6b",
-//       method: "POST",
-//       headers: {
-//         Authorization: "Mdjack 9fcc2a1c44a9ad9e0978c7853c5b7762-us4"
-//       },
-//       body: jsonData
-//     };
-
-//     request(options, (error, response, body) => {
-//       if (error) {
-//         // res.render("failure");
-//         console.log("Failure to Integrate");
-        
-//       } else {
-//         if (response.statusCode === 200) {
-//           // res.render("success");
-//           console.log("Success to Integrate MailChimp");
-//         } else {
-//           // res.render("failure");
-//           console.log("Failure to Integrate");
-//         }
-//       }
-//     });
-
-});
-};
-
+var dbSchema = require('./user_module');
+const passport = require('passport');
 
 // Create sign up for Alumni
 
 exports.createNewAlumni = function(req, res) {
   var data = req.body;
   console.log(data);
-
-  // Establishing connection between server and DB
-  dbConnection.connect();
-
+  
   var db = mongoose.connection;
 
   db.on("error", console.error.bind(console, "connection error:"));
@@ -151,10 +50,26 @@ exports.createNewAlumni = function(req, res) {
   });
 };
 
+exports.createNewCollege = (req, res) => {
+  console.log(req.body);
+
+  dbSchema.College.register(
+    { email: req.body.email, collegeName: req.body.collegeName},
+    req.body.password,
+    function(err, user) {
+      if (err) {
+        console.log(err);
+      }
+
+      passport.authenticate('local')(req, res , () => {
+        res.redirect('/college-control-panel');
+      });
+    }
+  );
+};
 
 
 // Posting Event details
-
 exports.createNewEvent = function(req, res) {
   var data = req.body;
   console.log(data);

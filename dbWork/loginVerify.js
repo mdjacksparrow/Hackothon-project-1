@@ -1,8 +1,9 @@
 const mongoose = require("mongoose");
 const DB = require("./user_module");
 const dbConnection = require("../dbWork/dbConnection");
-const url = require('url');
 const findParticularDataInDB = require('../dbWork/findParticularDataInDB');
+const UserSchema = require("../dbWork/user_module");
+const passport = require('passport');
 
 // FROM Directorate login
 exports.checkDirectorateLogin = function(req, res) {
@@ -44,44 +45,35 @@ exports.checkDirectorateLogin = function(req, res) {
 
 // FROM College login
 exports.checkCollegeLogin = function(req, res) {
-  //create connection
-  dbConnection.connect();
-
-  var db = mongoose.connection;
   
-  var givenEmail = req.body.Email;  
-  var givenPassword = req.body.Password;
+  console.log(req.body);
 
- 
-  db.on("error", console.error.bind(console, "connection error:"));
-  db.once("open", function() {
-    // we're connected!
-    console.log("Connection Established !");
-    DB.College.find({ email: givenEmail, password : givenPassword }, {}, (err, docs) => {
-      if (err) console.log(err);
-      else {
-        console.log(docs);
-        mongoose.connection.close();
-
-        var details = docs;
-
-        if(docs[0] === undefined){
-          console.log("Empty list");
-          res.render("college_sign_in");
-        }else if ((givenEmail === details[0].email) && (givenPassword === details[0].password)) {
-          res.redirect(url.format({
-           pathname : '/college_controlPanel',
-           query : {
-            "Cname" : details[0].college
-           }
-          }));
-        } else {
-          res.render("college_sign_in");
-        }
-        console.log("DB connection lost!");
-      }
-    });
+  const user = new UserSchema.College({
+    email: req.body.email,
+    password: req.body.password
   });
+
+  UserSchema.College.countDocuments(
+    {
+      email: req.body.email
+    },
+    (err, count) => {
+      if (count > 0) {
+        req.login(user, err => {
+          if (err) {
+            console.log(err);
+            res.redirect("/college_sign_up");
+          }
+
+          passport.authenticate("local")(req, res, () => {
+            return res.redirect("/college-control-panel");
+          });
+        });
+      } else {
+        res.redirect("/college_sign_up");
+      }
+    }
+  );
 };
 
 // FROM Alumni login

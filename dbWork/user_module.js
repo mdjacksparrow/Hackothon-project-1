@@ -17,22 +17,19 @@ const directorateSchema = new Schema({
 directorateSchema.plugin(passportLocalMongoose);
 
 const collegeSchema = new Schema({
-  college: {
+  collegeName: {
     type: String,
     required: [true]
   },
   email: {
     type: String,
     required: [true]
-  },
-  password: {
-    type: String,
-    required: [true]
   }
 });
 
 //////////////////////////////////////////////SETUP FOR LOCAL MONGOOSE PLUGIN FOR IMPLEMENTING HASH WITH SALTS ////////////////////////////////////////////////////////
-collegeSchema.plugin(passportLocalMongoose);
+collegeSchema.plugin(passportLocalMongoose, {usernameField : 'email'}
+);
 
 const userSchema = new Schema({
   username: {
